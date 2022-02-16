@@ -44,14 +44,12 @@ namespace Shape.Lib
             }
             else
             {
-                {
-                    dynamic i = new ExpandoObject();
-                    i.X = "Init";
-                    i.Y = 0;
-                    i.Type = null;
-                    gs = SortingHat(new[] { i });
-                    tack = new ExpandoObject();
-                }
+                dynamic i = new ExpandoObject();
+                i.X = "Init";
+                i.Y = 0;
+                i.Type = null;
+                gs = SortingHat(new[] {i});
+                tack = new ExpandoObject();
             }
 
             if (roster != MathHelper.no && gs(MathHelper.no) == roster?.Count)

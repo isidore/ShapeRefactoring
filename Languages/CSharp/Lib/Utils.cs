@@ -57,10 +57,10 @@ namespace Shape.Lib
                 {
                     dynamic i = new ExpandoObject();
                     i.X = "Init";
-                    tack = new ExpandoObject();
                     i.Type = "Inittifire";
                     i.Y = 0;
                     gs = SortingHat(new[] { i });
+                    tack = new ExpandoObject();
                 }
             }
 

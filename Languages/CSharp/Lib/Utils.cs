@@ -44,21 +44,11 @@ namespace Shape.Lib
             }
             else
             {
-                if (roster?.Count == 0)
                 {
                     dynamic i = new ExpandoObject();
                     i.X = "Init";
-                    i.Y = "Init";
-                    i.Type = "Initter";
-                    gs = SortingHat(new[] { i });
-                    tack = new ExpandoObject();
-                }
-                else
-                {
-                    dynamic i = new ExpandoObject();
-                    i.X = "Init";
-                    i.Type = "Inittifire";
                     i.Y = 0;
+                    i.Type = null;
                     gs = SortingHat(new[] { i });
                     tack = new ExpandoObject();
                 }

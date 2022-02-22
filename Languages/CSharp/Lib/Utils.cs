@@ -67,7 +67,7 @@ namespace Shape.Lib
 
             return tack;
         }
-       public static dynamic SortingHat2(IReadOnlyList<dynamic> roster)
+       public static Func<int?, dynamic> SortingHat2(IReadOnlyList<dynamic> roster)
         {
             var tack = MathHelper.Gs(0);
             var gs = MathHelper.Gz();

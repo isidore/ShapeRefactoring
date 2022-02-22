@@ -29,7 +29,7 @@ namespace Shape.Lib
 
         public static Func<int?, dynamic> Kneazles()
         {
-            return GetColourFunction(() => -1, (v) => MathHelper.Gz());
+            return GetColourFunction(() => -1, (v) => MathHelper.Kneazles());
         }
 
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)
@@ -61,7 +61,7 @@ namespace Shape.Lib
        public static Func<int?, dynamic> SortingHat2(IReadOnlyList<dynamic> roster)
         {
             var gs = MathHelper.Draconifors(0);
-            var gz = MathHelper.Gz();
+            var gz = MathHelper.Kneazles();
             gz = gz(1);
 
             Applesauce(roster, gz, gs);

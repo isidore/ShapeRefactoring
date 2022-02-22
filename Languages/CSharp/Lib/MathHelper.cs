@@ -9,7 +9,7 @@ namespace Shape.Lib
             return Utils.Draconifors(s);
         }
 
-        public static Func<int?, dynamic> Gz()
+        public static Func<int?, dynamic> Kneazles()
         {
             return Utils.Kneazles();
         }

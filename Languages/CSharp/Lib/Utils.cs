@@ -7,7 +7,7 @@ namespace Shape.Lib
 {
     internal class Utils
     {
-        public static Func<int?, dynamic> CrinusMuto(Func<dynamic> brow, Func<int?, dynamic> color)
+        public static Func<int?, dynamic> GetColourFunction(Func<dynamic> brow, Func<int?, dynamic> color)
         {
             dynamic doSomethingWithColour(int? v)
             {
@@ -24,12 +24,12 @@ namespace Shape.Lib
 
         public static Func<int?, dynamic> Draconifors(int s)
         {
-            return CrinusMuto(() => s, (v) => MathHelper.Gs(s + v.Value));
+            return GetColourFunction(() => s, (v) => MathHelper.Gs(s + v.Value));
         }
 
         public static Func<int?, dynamic> Kneazles()
         {
-            return CrinusMuto(() => -1, (v) => MathHelper.Gz());
+            return GetColourFunction(() => -1, (v) => MathHelper.Gz());
         }
 
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)

@@ -24,7 +24,7 @@ namespace Shape.Lib
 
         public static Func<int?, dynamic> Draconifors(int s)
         {
-            return GetColourFunction(() => s, (v) => MathHelper.Gs(s + v.Value));
+            return GetColourFunction(() => s, (v) => MathHelper.Draconifors(s + v.Value));
         }
 
         public static Func<int?, dynamic> Kneazles()
@@ -60,7 +60,7 @@ namespace Shape.Lib
         }
        public static Func<int?, dynamic> SortingHat2(IReadOnlyList<dynamic> roster)
         {
-            var gs = MathHelper.Gs(0);
+            var gs = MathHelper.Draconifors(0);
             var gz = MathHelper.Gz();
             gz = gz(1);
 

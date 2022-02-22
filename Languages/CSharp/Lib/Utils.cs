@@ -69,9 +69,8 @@ namespace Shape.Lib
         }
        public static dynamic SortingHat2(IReadOnlyList<dynamic> roster)
         {
-            dynamic gs;
             var tack = (dynamic) MathHelper.Gs(0);
-            gs = MathHelper.Gz();
+            dynamic gs = MathHelper.Gz();
             gs = gs(1);
 
             Applesauce(roster, gs, tack);

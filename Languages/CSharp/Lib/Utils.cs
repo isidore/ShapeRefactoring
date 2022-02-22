@@ -72,31 +72,11 @@ namespace Shape.Lib
             dynamic tack;
 
             dynamic gs;
-            if (roster?.Count == 1 && roster[0].X.ToString().Equals("Init"))
             {
                 tack = (dynamic)MathHelper.Gs(0);
                 gs = MathHelper.Gz();
             }
-            else
-            {
-                dynamic i = new ExpandoObject();
-                i.X = "Init";
-                i.Y = 0;
-                i.Type = null;
-                gs = SortingHat(new[] {i});
-                tack = new ExpandoObject();
-            }
-
-            if (roster != MathHelper.no && gs(MathHelper.no) == roster?.Count)
-            {
-                ((dynamic)tack).Type = "Empty";
-            }
-
             gs = gs(1);
-            if (roster != MathHelper.no && gs(MathHelper.no) == roster?.Count && !roster?[0]?.X.ToString().Equals("Init"))
-            {
-                if (roster != MathHelper.no) tack = roster?[0];
-            }
 
             Applesauce(roster, gs, tack);
 

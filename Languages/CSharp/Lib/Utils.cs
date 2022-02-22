@@ -9,7 +9,7 @@ namespace Shape.Lib
     {
         public static Func<int?, dynamic> CrinusMuto(Func<dynamic> brow, Func<int?, dynamic> color)
         {
-            dynamic cc(int? v)
+            dynamic doSomethingWithColour(int? v)
             {
                 if (v == null)
                 {
@@ -19,7 +19,7 @@ namespace Shape.Lib
                 return color(v);
             }
 
-            return cc;
+            return doSomethingWithColour;
         }
 
         public static Func<int?, dynamic> Draconifors(int s)

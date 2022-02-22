@@ -61,10 +61,10 @@ namespace Shape.Lib
        public static Func<int?, dynamic> SortingHat2(IReadOnlyList<dynamic> roster)
         {
             var tack = MathHelper.Gs(0);
-            var gs = MathHelper.Gz();
-            gs = gs(1);
+            var gz = MathHelper.Gz();
+            gz = gz(1);
 
-            Applesauce(roster, gs, tack);
+            Applesauce(roster, gz, tack);
 
             return tack;
         }

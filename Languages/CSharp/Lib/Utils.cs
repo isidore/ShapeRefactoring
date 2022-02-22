@@ -37,12 +37,7 @@ namespace Shape.Lib
             dynamic tack;
 
             dynamic gs;
-            if (roster?.Count == 1 && roster[0].X.ToString().Equals("Init"))
-            {
-                tack = (dynamic)MathHelper.Gs(0);
-                gs = MathHelper.Gz();
-            }
-            else
+         
             {
                 dynamic i = new ExpandoObject();
                 i.X = "Init";

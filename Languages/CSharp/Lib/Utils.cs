@@ -38,8 +38,8 @@ namespace Shape.Lib
 
             ((IDictionary<string, object>)exp)["X"] = "Init";
             ((IDictionary<string, object>)exp)["Y"] = 0;
+            ((IDictionary<string, object>)exp)["Type"] = null;
             dynamic i = exp;
-            i.Type = null;
             var draconifors = SortingHat2(new[] {i});
             dynamic tack = new ExpandoObject();
 

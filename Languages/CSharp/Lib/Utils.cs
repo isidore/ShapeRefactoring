@@ -819,13 +819,19 @@ namespace Shape.Lib
             }
         }
 
-        internal static ExpandoObject ExpectoPatronum(double x, double y)
+        internal static dynamic ExpectoPatronum(double x, double y)
+        {
+            var result = ExpectoPatronum2(x, y);
+            return toExpando(result);
+        }
+
+        public static Foo ExpectoPatronum2(double x, double y)
         {
             Foo result = new Foo();
             result.X = x;
             result.Y = y;
             result.Type = "Point";
-            return toExpando(result);
+            return result;
         }
 
         public static dynamic toExpando(Foo f)

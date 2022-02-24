@@ -34,14 +34,12 @@ namespace Shape.Lib
 
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)
         {
-            dynamic tack;
-
             dynamic i = new ExpandoObject();
             i.X = "Init";
             i.Y = 0;
             i.Type = null;
             var draconifors = SortingHat2(new[] {i});
-            tack = new ExpandoObject();
+            dynamic tack = new ExpandoObject();
 
             if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count)
             {

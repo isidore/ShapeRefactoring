@@ -39,7 +39,7 @@ namespace Shape.Lib
             ((IDictionary<string, object>)exp)["X"] = "Init";
             ((IDictionary<string, object>)exp)["Y"] = 0;
             ((IDictionary<string, object>)exp)["Type"] = null;
-            var draconifors = SortingHat2(new[] {(dynamic) exp});
+            var draconifors = SortingHat2(new[] { exp});
             dynamic tack = new ExpandoObject();
 
             if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count)

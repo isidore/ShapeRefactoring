@@ -60,13 +60,13 @@ namespace Shape.Lib
         }
        public static Func<int?, dynamic> SortingHat2(IReadOnlyList<dynamic> roster)
         {
-            var gs = MathHelper.Draconifors(0);
-            var gz = MathHelper.Kneazles();
-            gz = gz(1);
+            var draconifors = MathHelper.Draconifors(0);
+            var kneazles = MathHelper.Kneazles();
+            kneazles = kneazles(1);
 
-            Applesauce(roster, gz, gs);
+            Applesauce(roster, kneazles, draconifors);
 
-            return gs;
+            return draconifors;
         }
 
         private static void Applesauce(IReadOnlyList<dynamic> roster, dynamic gs, dynamic tack)

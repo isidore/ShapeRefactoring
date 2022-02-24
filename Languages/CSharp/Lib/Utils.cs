@@ -40,7 +40,7 @@ namespace Shape.Lib
             i.X = "Init";
             i.Y = 0;
             i.Type = null;
-            dynamic draconifors = SortingHat2(new[] {i});
+            var draconifors = SortingHat2(new[] {i});
             tack = new ExpandoObject();
 
             if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count)

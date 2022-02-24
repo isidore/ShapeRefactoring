@@ -7,7 +7,7 @@ namespace Shape.Lib
 {
     internal class Utils
     {
-        public static Func<int?, dynamic> GetColourFunction(Func<dynamic> brow, Func<int?, dynamic> color)
+        public static Func<int?, dynamic> GetColourFunction(Func<int> brow, Func<int?, dynamic> color)
         {
             dynamic doSomethingWithColour(int? v)
             {

@@ -34,8 +34,11 @@ namespace Shape.Lib
 
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)
         {
-            dynamic i = new ExpandoObject();
-            i.X = "Init";
+            var exp = new ExpandoObject();
+
+            ((IDictionary<string, object>)exp)["X"] = "Init";
+            // i.X = "Init";
+            dynamic i = exp;
             i.Y = 0;
             i.Type = null;
             var draconifors = SortingHat2(new[] {i});
@@ -58,13 +61,13 @@ namespace Shape.Lib
         }
        public static Func<int?, dynamic> SortingHat2(IReadOnlyList<dynamic> roster)
         {
-            var draconifors = MathHelper.Draconifors(0);
+            var tack = MathHelper.Draconifors(0);
             var kneazles = MathHelper.Kneazles();
             kneazles = kneazles(1);
 
-            Applesauce(roster, kneazles, draconifors);
+            Applesauce(roster, kneazles, tack);
 
-            return draconifors;
+            return tack;
         }
 
         private static void Applesauce(IReadOnlyList<dynamic> roster, dynamic gs, dynamic tack)

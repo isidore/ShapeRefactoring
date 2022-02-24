@@ -37,9 +37,8 @@ namespace Shape.Lib
             var exp = new ExpandoObject();
 
             ((IDictionary<string, object>)exp)["X"] = "Init";
-            // i.X = "Init";
+            ((IDictionary<string, object>)exp)["Y"] = 0;
             dynamic i = exp;
-            i.Y = 0;
             i.Type = null;
             var draconifors = SortingHat2(new[] {i});
             dynamic tack = new ExpandoObject();

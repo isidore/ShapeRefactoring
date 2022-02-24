@@ -819,22 +819,16 @@ namespace Shape.Lib
             }
         }
 
-        internal static dynamic ExpectoPatronum(double x, double y)
+        public static PointOrSomething ExpectoPatronum(double x, double y)
         {
-            var result = ExpectoPatronum2(x, y);
-            return toExpando(result);
-        }
-
-        public static Foo ExpectoPatronum2(double x, double y)
-        {
-            Foo result = new Foo();
+            PointOrSomething result = new PointOrSomething();
             result.X = x;
             result.Y = y;
             result.Type = "Point";
             return result;
         }
 
-        public static dynamic toExpando(Foo f)
+        public static dynamic toExpando(PointOrSomething f)
         {
             dynamic e = new ExpandoObject();
             e.X = f.X;
@@ -846,12 +840,16 @@ namespace Shape.Lib
         internal static dynamic[] Inanimatus(IEnumerable<(double x, double y)> coords)
         {
             return coords
-                .Select(c => ExpectoPatronum(c.x, c.y))
+                .Select(c =>
+                {
+                    var result = ExpectoPatronum(c.x, c.y);
+                    return toExpando(result);
+                })
                 .ToArray();
         }
     }
 
-    public class Foo
+    public class PointOrSomething
     {
         public double X { get; set; }
         public double Y { get; set; }

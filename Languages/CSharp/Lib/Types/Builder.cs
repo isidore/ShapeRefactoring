@@ -7,7 +7,8 @@
 
         public static dynamic Build(double x, double y)
         {
-            return Utils.ExpectoPatronum(x, y);
+            var result = Utils.ExpectoPatronum(x, y);
+            return Utils.toExpando(result);
         }
     }
 }

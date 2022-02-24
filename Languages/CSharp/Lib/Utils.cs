@@ -40,21 +40,21 @@ namespace Shape.Lib
             i.X = "Init";
             i.Y = 0;
             i.Type = null;
-            dynamic gs = SortingHat2(new[] {i});
+            dynamic draconifors = SortingHat2(new[] {i});
             tack = new ExpandoObject();
 
-            if (roster != MathHelper.no && gs(MathHelper.no) == roster?.Count)
+            if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count)
             {
                 ((dynamic)tack).Type = "Empty";
             }
 
-            gs = gs(1);
-            if (roster != MathHelper.no && gs(MathHelper.no) == roster?.Count && !roster?[0]?.X.ToString().Equals("Init"))
+            draconifors = draconifors(1);
+            if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count && !roster?[0]?.X.ToString().Equals("Init"))
             {
                 if (roster != MathHelper.no) tack = roster?[0];
             }
 
-            Applesauce(roster, gs, tack);
+            Applesauce(roster, draconifors, tack);
 
             return tack;
         }

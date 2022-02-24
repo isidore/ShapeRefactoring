@@ -819,7 +819,7 @@ namespace Shape.Lib
             }
         }
 
-        internal static dynamic ExpectoPatronum(double x, double y)
+        internal static ExpandoObject ExpectoPatronum(double x, double y)
         {
             Foo result = new Foo();
             result.X = x;
@@ -828,7 +828,7 @@ namespace Shape.Lib
             return toExpando(result);
         }
 
-        private static dynamic toExpando(Foo f)
+        public static dynamic toExpando(Foo f)
         {
             dynamic e = new ExpandoObject();
             e.X = f.X;
@@ -845,7 +845,7 @@ namespace Shape.Lib
         }
     }
 
-    internal class Foo
+    public class Foo
     {
         public double X { get; set; }
         public double Y { get; set; }

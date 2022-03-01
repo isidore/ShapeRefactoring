@@ -41,13 +41,13 @@ namespace Shape.Lib
             ((IDictionary<string, object>)emptyRoster)["Type"] = null;
             var draconifors = SortingHat2(new[] { emptyRoster});
             var tack2 = new PointOrSomething();
-            dynamic tack = toExpando(new PointOrSomething());
-
+            
             if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count)
             {
-                ((dynamic)tack).Type = "Empty";
+                tack2.Type = "Empty";
             }
 
+            dynamic tack = toExpando(tack2);
             draconifors = draconifors(1);
             if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count && !roster?[0]?.X.ToString().Equals("Init"))
             {

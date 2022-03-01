@@ -40,6 +40,7 @@ namespace Shape.Lib
             ((IDictionary<string, object>)emptyRoster)["Y"] = 0;
             ((IDictionary<string, object>)emptyRoster)["Type"] = null;
             var draconifors = SortingHat2(new[] { emptyRoster});
+            var tack2 = new PointOrSomething();
             dynamic tack = new ExpandoObject();
 
             if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count)

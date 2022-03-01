@@ -26,7 +26,8 @@ namespace Shape.Tests
             Assert.AreEqual("Point", result.Type);
             Assert.AreEqual(point.X, result.X);
             Assert.AreEqual(point.Y, result.Y);
-            Assert.AreEqual(point, result);
+            
+            //Assert.AreEqual("point.ToString()",result.ToString());
         }
     }
 }

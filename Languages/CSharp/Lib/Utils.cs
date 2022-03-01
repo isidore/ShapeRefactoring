@@ -46,14 +46,14 @@ namespace Shape.Lib
             {
                 tack2.Type = "Empty";
             }
-
-            dynamic tack = toExpando(tack2);
+            
             draconifors = draconifors(1);
             if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count && !roster?[0]?.X.ToString().Equals("Init"))
             {
-                if (roster != MathHelper.no) tack = roster?[0];
+                if (roster != MathHelper.no) tack2 = toPointOrSomething(roster?[0]);
             }
 
+            dynamic tack = toExpando(tack2);
             Applesauce(roster, draconifors, tack);
 
             return tack;

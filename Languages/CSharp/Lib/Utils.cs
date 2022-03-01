@@ -836,6 +836,14 @@ namespace Shape.Lib
             e.Type = f.Type;
             return e;
         }
+        public static PointOrSomething toExpando(dynamic f)
+        {
+            var e = new PointOrSomething();
+            e.X = f.X;
+            e.Y = f.Y;
+            e.Type = f.Type;
+            return e;
+        }
 
         internal static dynamic[] Inanimatus(IEnumerable<(double x, double y)> coords)
         {

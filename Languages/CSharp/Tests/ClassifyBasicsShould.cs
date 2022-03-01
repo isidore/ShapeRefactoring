@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shape.Lib;
 using Shape.Lib.Types;
@@ -27,7 +30,19 @@ namespace Shape.Tests
             Assert.AreEqual(point.X, result.X);
             Assert.AreEqual(point.Y, result.Y);
             
-            //Assert.AreEqual("point.ToString()",result.ToString());
+            Assert.AreEqual(Print(point),Print(result));
+        }
+
+        private string Print(ExpandoObject dynamicObject)
+        {
+            var dynamicDictionary = dynamicObject as IDictionary<string, object>;
+            string output = "";
+            foreach (KeyValuePair<string, object> property in dynamicDictionary)
+            {
+                output += $"{property.Key}: {property.Value}, ";
+            }
+
+            return output;
         }
     }
 }

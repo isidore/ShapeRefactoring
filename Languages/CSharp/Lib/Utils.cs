@@ -39,7 +39,8 @@ namespace Shape.Lib
             ((IDictionary<string, object>)emptyRoster)["X"] = "Init";
             ((IDictionary<string, object>)emptyRoster)["Y"] = 0;
             ((IDictionary<string, object>)emptyRoster)["Type"] = null;
-            var draconifors = SortingHat2(new[] { emptyRoster});
+            var empty = new[] { emptyRoster};
+            var draconifors = SortingHat2(empty);
             var pointOrSomething = new PointOrSomething();
             
             if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count)

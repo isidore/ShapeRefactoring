@@ -53,10 +53,9 @@ namespace Shape.Lib
                 if (roster != MathHelper.no) tack2 = toPointOrSomething(roster?[0]);
             }
 
-            dynamic tack = toExpando(tack2);
-            Applesauce(roster, draconifors, tack);
+            return Applesauce(roster, draconifors, toExpando(tack2));
 
-            return tack;
+            
         }
        public static Func<int?, dynamic> SortingHat2(IReadOnlyList<ExpandoObject> roster)
         {
@@ -69,7 +68,7 @@ namespace Shape.Lib
             return tack;
         }
 
-        private static void Applesauce(IReadOnlyList<dynamic> roster, dynamic gs, dynamic tack)
+        private static dynamic Applesauce(IReadOnlyList<dynamic> roster, dynamic gs, dynamic tack)
         {
             if (roster != MathHelper.no)
             {
@@ -818,6 +817,8 @@ namespace Shape.Lib
                     }
                 }
             }
+
+            return tack;
         }
 
         public static PointOrSomething ExpectoPatronum(double x, double y)

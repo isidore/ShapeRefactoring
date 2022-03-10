@@ -34,13 +34,8 @@ namespace Shape.Lib
 
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)
         {
-            var emptyRoster = new ExpandoObject();
-
-            ((IDictionary<string, object>)emptyRoster)["X"] = "Init";
-            ((IDictionary<string, object>)emptyRoster)["Y"] = 0;
-            ((IDictionary<string, object>)emptyRoster)["Type"] = null;
-            var empty = new[] { emptyRoster};
-            var draconifors = SortingHat2(empty);
+            
+            var draconifors = SortingHat2();
             var pointOrSomething = new PointOrSomething();
             
             if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count)
@@ -58,8 +53,14 @@ namespace Shape.Lib
 
             
         }
-       public static Func<int?, dynamic> SortingHat2(IReadOnlyList<ExpandoObject> roster)
+       public static Func<int?, dynamic> SortingHat2()
         {
+            var emptyRoster = new ExpandoObject();
+
+            ((IDictionary<string, object>)emptyRoster)["X"] = "Init";
+            ((IDictionary<string, object>)emptyRoster)["Y"] = 0;
+            ((IDictionary<string, object>)emptyRoster)["Type"] = null;
+            var roster= new[] { emptyRoster };
             var tack = MathHelper.Draconifors(0);
             var kneazles = MathHelper.Kneazles();
             kneazles = kneazles(1);

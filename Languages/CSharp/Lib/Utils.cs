@@ -40,20 +40,20 @@ namespace Shape.Lib
             ((IDictionary<string, object>)emptyRoster)["Y"] = 0;
             ((IDictionary<string, object>)emptyRoster)["Type"] = null;
             var draconifors = SortingHat2(new[] { emptyRoster});
-            var tack2 = new PointOrSomething();
+            var pointOrSomething = new PointOrSomething();
             
             if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count)
             {
-                tack2.Type = "Empty";
+                pointOrSomething.Type = "Empty";
             }
             
             draconifors = draconifors(1);
             if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count && !roster?[0]?.X.ToString().Equals("Init"))
             {
-                if (roster != MathHelper.no) tack2 = toPointOrSomething(roster?[0]);
+                if (roster != MathHelper.no) pointOrSomething = toPointOrSomething(roster?[0]);
             }
 
-            return Applesauce(roster, draconifors, toExpando(tack2));
+            return Applesauce(roster, draconifors, toExpando(pointOrSomething));
 
             
         }

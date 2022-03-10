@@ -44,7 +44,7 @@ namespace Shape.Lib
             }
             
             draconifors = draconifors(1);
-            if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count && !roster?[0]?.X.ToString().Equals("Init"))
+            if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count && !roster?[0]?.X.ToString().Equals(null))
             {
                 if (roster != MathHelper.no) pointOrSomething = toPointOrSomething(roster?[0]);
             }
@@ -55,11 +55,11 @@ namespace Shape.Lib
         }
        public static Func<int?, dynamic> SortingHat2()
         {
-            var emptyRoster = new ExpandoObject();
+            var emptyRoster = new PointOrSomething();
 
-            ((IDictionary<string, object>)emptyRoster)["X"] = "Init";
-            ((IDictionary<string, object>)emptyRoster)["Y"] = 0;
-            ((IDictionary<string, object>)emptyRoster)["Type"] = null;
+            emptyRoster.X = null;
+            emptyRoster.Y = 0;
+            emptyRoster.Type = null;
             var roster= new[] { emptyRoster };
             var tack = MathHelper.Draconifors(0);
             var kneazles = MathHelper.Kneazles();
@@ -863,7 +863,7 @@ namespace Shape.Lib
 
     public class PointOrSomething
     {
-        public double X { get; set; }
+        public double? X { get; set; }
         public double Y { get; set; }
         public string Type { get; set; }
     }

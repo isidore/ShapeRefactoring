@@ -55,12 +55,12 @@ namespace Shape.Lib
         }
        public static Func<int?, dynamic> SortingHat2()
         {
-            var emptyRoster = new PointOrSomething();
+            var empty = new PointOrSomething();
 
-            emptyRoster.X = null;
-            emptyRoster.Y = 0;
-            emptyRoster.Type = null;
-            var roster= new[] { emptyRoster };
+            empty.X = null;
+            empty.Y = 0;
+            empty.Type = null;
+            var roster= new[] { empty };
             var tack = MathHelper.Draconifors(0);
             var kneazles = MathHelper.Kneazles();
             kneazles = kneazles(1);

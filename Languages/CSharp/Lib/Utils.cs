@@ -38,15 +38,15 @@ namespace Shape.Lib
             var draconifors = SortingHat2();
             var pointOrSomething = new PointOrSomething();
             
-            if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count)
+            if (roster != MathHelper.NULL && draconifors(MathHelper.NULL) == roster?.Count)
             {
                 pointOrSomething.Type = "Empty";
             }
             
             draconifors = draconifors(1);
-            if (roster != MathHelper.no && draconifors(MathHelper.no) == roster?.Count && !roster?[0]?.X.ToString().Equals(null))
+            if (roster != MathHelper.NULL && draconifors(MathHelper.NULL) == roster?.Count && !roster?[0]?.X.ToString().Equals(null))
             {
-                if (roster != MathHelper.no) pointOrSomething = toPointOrSomething(roster?[0]);
+                if (roster != MathHelper.NULL) pointOrSomething = toPointOrSomething(roster?[0]);
             }
 
             return Applesauce(roster, draconifors, toExpando(pointOrSomething));
@@ -72,28 +72,28 @@ namespace Shape.Lib
 
         private static dynamic Applesauce(IReadOnlyList<dynamic> roster, dynamic gs, dynamic tack)
         {
-            if (roster != MathHelper.no)
+            if (roster != MathHelper.NULL)
             {
                 var dC = roster?.Distinct(new Checker<dynamic>((pa, pb) =>
                 {
-                    if (pb == MathHelper.no && pa == MathHelper.no)
+                    if (pb == MathHelper.NULL && pa == MathHelper.NULL)
                     {
                         return true;
                     }
 
-                    if (MathHelper.no == pa || pb == MathHelper.no)
+                    if (MathHelper.NULL == pa || pb == MathHelper.NULL)
                     {
                         return false;
                     }
 
-                    if ((IDictionary<string, dynamic>) pb != MathHelper.no &&
+                    if ((IDictionary<string, dynamic>) pb != MathHelper.NULL &&
                         ((ICollection<KeyValuePair<string, dynamic>>) pa).Count != ((IDictionary<string, dynamic>) pb).Count)
                         return false;
 
                     foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>) pa)
                     {
-                        dynamic o = MathHelper.no;
-                        if ((IDictionary<string, dynamic>) pb != MathHelper.no &&
+                        dynamic o = MathHelper.NULL;
+                        if ((IDictionary<string, dynamic>) pb != MathHelper.NULL &&
                             !((IDictionary<string, dynamic>) pb).TryGetValue(k, out o))
                             return false;
 
@@ -111,23 +111,23 @@ namespace Shape.Lib
                     var i1 = i;
                     if (!((Func<bool>) (() =>
                         {
-                            if (roster[i1 - 2] == MathHelper.no && roster[i1 - 1] == MathHelper.no)
+                            if (roster[i1 - 2] == MathHelper.NULL && roster[i1 - 1] == MathHelper.NULL)
                             {
                                 return true;
                             }
 
-                            if (roster[i1 - 2] == MathHelper.no || roster[i1 - 1] == MathHelper.no)
+                            if (roster[i1 - 2] == MathHelper.NULL || roster[i1 - 1] == MathHelper.NULL)
                             {
                                 return false;
                             }
 
-                            if ((IDictionary<string, dynamic>) roster[i1 - 1] != MathHelper.no &&
+                            if ((IDictionary<string, dynamic>) roster[i1 - 1] != MathHelper.NULL &&
                                 ((ICollection<KeyValuePair<string, dynamic>>) roster[i1 - 2]).Count !=
                                 ((IDictionary<string, dynamic>) roster[i1 - 1]).Count) return false;
                             foreach (var (key, value) in (ICollection<KeyValuePair<string, dynamic>>) roster[i1 - 2])
                             {
-                                var obj = MathHelper.no;
-                                if ((IDictionary<string, dynamic>) roster[i1 - 1] != MathHelper.no &&
+                                var obj = MathHelper.NULL;
+                                if ((IDictionary<string, dynamic>) roster[i1 - 1] != MathHelper.NULL &&
                                     !((IDictionary<string, dynamic>) roster[i1 - 1]).TryGetValue(key, out obj)) return false;
                                 if (!Equals(obj, value)) return false;
                             }
@@ -135,23 +135,23 @@ namespace Shape.Lib
                             return true;
                         }))() && !((Func<bool>) (() =>
                         {
-                            if (roster[i1 - 2] == MathHelper.no && roster[i1] == MathHelper.no)
+                            if (roster[i1 - 2] == MathHelper.NULL && roster[i1] == MathHelper.NULL)
                             {
                                 return true;
                             }
 
-                            if (roster[i1 - 2] == MathHelper.no || roster[i1] == MathHelper.no)
+                            if (roster[i1 - 2] == MathHelper.NULL || roster[i1] == MathHelper.NULL)
                             {
                                 return false;
                             }
 
-                            if ((IDictionary<string, dynamic>) roster[i1] != MathHelper.no &&
+                            if ((IDictionary<string, dynamic>) roster[i1] != MathHelper.NULL &&
                                 ((ICollection<KeyValuePair<string, dynamic>>) roster[i1 - 2]).Count !=
                                 ((IDictionary<string, dynamic>) roster[i1]).Count) return false;
                             foreach (var (key1, value1) in (ICollection<KeyValuePair<string, dynamic>>) roster[i1 - 2])
                             {
-                                var obj1 = MathHelper.no;
-                                if ((IDictionary<string, dynamic>) roster[i1] != MathHelper.no &&
+                                var obj1 = MathHelper.NULL;
+                                if ((IDictionary<string, dynamic>) roster[i1] != MathHelper.NULL &&
                                     !((IDictionary<string, dynamic>) roster[i1]).TryGetValue(key1, out obj1)) return false;
                                 if (!Equals(obj1, value1)) return false;
                             }
@@ -159,23 +159,23 @@ namespace Shape.Lib
                             return true;
                         }))() && !((Func<bool>) (() =>
                         {
-                            if (roster[i1 - 1] == MathHelper.no && roster[i1] == MathHelper.no)
+                            if (roster[i1 - 1] == MathHelper.NULL && roster[i1] == MathHelper.NULL)
                             {
                                 return true;
                             }
 
-                            if (roster[i1 - 1] == MathHelper.no || roster[i1] == MathHelper.no)
+                            if (roster[i1 - 1] == MathHelper.NULL || roster[i1] == MathHelper.NULL)
                             {
                                 return false;
                             }
 
-                            if ((IDictionary<string, dynamic>) roster[i1] != MathHelper.no &&
+                            if ((IDictionary<string, dynamic>) roster[i1] != MathHelper.NULL &&
                                 ((ICollection<KeyValuePair<string, dynamic>>) roster[i1 - 1]).Count !=
                                 ((IDictionary<string, dynamic>) roster[i1]).Count) return false;
                             foreach (var (key2, value2) in (ICollection<KeyValuePair<string, dynamic>>) roster[i1 - 1])
                             {
-                                var obj2 = MathHelper.no;
-                                if ((IDictionary<string, dynamic>) roster[i1] != MathHelper.no &&
+                                var obj2 = MathHelper.NULL;
+                                if ((IDictionary<string, dynamic>) roster[i1] != MathHelper.NULL &&
                                     !((IDictionary<string, dynamic>) roster[i1]).TryGetValue(key2, out obj2)) return false;
                                 if (!Equals(obj2, value2)) return false;
                             }
@@ -204,23 +204,23 @@ namespace Shape.Lib
                 {
                     if (!((Func<bool>) (() =>
                         {
-                            if (roster[^2] == MathHelper.no && roster[^1] == MathHelper.no)
+                            if (roster[^2] == MathHelper.NULL && roster[^1] == MathHelper.NULL)
                             {
-                                return roster[^2] == MathHelper.no;
+                                return roster[^2] == MathHelper.NULL;
                             }
 
-                            if (roster[^2] == MathHelper.no || roster[^1] == MathHelper.no)
+                            if (roster[^2] == MathHelper.NULL || roster[^1] == MathHelper.NULL)
                             {
-                                return !roster[^1] == MathHelper.no;
+                                return !roster[^1] == MathHelper.NULL;
                             }
 
-                            if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.no &&
+                            if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.NULL &&
                                 ((ICollection<KeyValuePair<string, dynamic>>) roster[^2]).Count !=
                                 ((IDictionary<string, dynamic>) roster[^1]).Count) return false;
                             foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) roster[^2])
                             {
-                                var noNo = MathHelper.no;
-                                if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.no &&
+                                var noNo = MathHelper.NULL;
+                                if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.NULL &&
                                     !((IDictionary<string, dynamic>) roster[^1]).TryGetValue(keyValuePair.Key, out noNo))
                                     return false;
                                 if (!Equals(noNo, keyValuePair.Value)) return false;
@@ -229,23 +229,23 @@ namespace Shape.Lib
                             return true;
                         }))() && !((Func<bool>) (() =>
                         {
-                            if (roster[^2] == MathHelper.no && roster[1] == MathHelper.no)
+                            if (roster[^2] == MathHelper.NULL && roster[1] == MathHelper.NULL)
                             {
-                                return roster[^2] == MathHelper.no;
+                                return roster[^2] == MathHelper.NULL;
                             }
 
-                            if (roster[^2] == MathHelper.no || roster[1] == MathHelper.no)
+                            if (roster[^2] == MathHelper.NULL || roster[1] == MathHelper.NULL)
                             {
-                                return !roster[1] == MathHelper.no;
+                                return !roster[1] == MathHelper.NULL;
                             }
 
-                            if ((IDictionary<string, dynamic>) roster[1] != MathHelper.no &&
+                            if ((IDictionary<string, dynamic>) roster[1] != MathHelper.NULL &&
                                 ((ICollection<KeyValuePair<string, dynamic>>) roster[^2]).Count !=
                                 ((IDictionary<string, dynamic>) roster[1]).Count) return false;
                             foreach (var keyValuePair1 in (ICollection<KeyValuePair<string, dynamic>>) roster[^2])
                             {
-                                var noNo1 = MathHelper.no;
-                                if ((IDictionary<string, dynamic>) roster[1] != MathHelper.no &&
+                                var noNo1 = MathHelper.NULL;
+                                if ((IDictionary<string, dynamic>) roster[1] != MathHelper.NULL &&
                                     !((IDictionary<string, dynamic>) roster[1]).TryGetValue(keyValuePair1.Key, out noNo1))
                                     return false;
                                 if (!Equals(noNo1, keyValuePair1.Value)) return false;
@@ -254,23 +254,23 @@ namespace Shape.Lib
                             return true;
                         }))() && !((Func<bool>) (() =>
                         {
-                            if (roster[^1] == MathHelper.no && roster[1] == MathHelper.no)
+                            if (roster[^1] == MathHelper.NULL && roster[1] == MathHelper.NULL)
                             {
-                                return roster[^1] == MathHelper.no;
+                                return roster[^1] == MathHelper.NULL;
                             }
 
-                            if (roster[^1] == MathHelper.no || roster[1] == MathHelper.no)
+                            if (roster[^1] == MathHelper.NULL || roster[1] == MathHelper.NULL)
                             {
-                                return !roster[1] == MathHelper.no;
+                                return !roster[1] == MathHelper.NULL;
                             }
 
-                            if ((IDictionary<string, dynamic>) roster[1] != MathHelper.no &&
+                            if ((IDictionary<string, dynamic>) roster[1] != MathHelper.NULL &&
                                 ((ICollection<KeyValuePair<string, dynamic>>) roster[^1]).Count !=
                                 ((IDictionary<string, dynamic>) roster[1]).Count) return false;
                             foreach (var keyValuePair2 in (ICollection<KeyValuePair<string, dynamic>>) roster[^1])
                             {
-                                var noNo2 = MathHelper.no;
-                                if ((IDictionary<string, dynamic>) roster[1] != MathHelper.no &&
+                                var noNo2 = MathHelper.NULL;
+                                if ((IDictionary<string, dynamic>) roster[1] != MathHelper.NULL &&
                                     !((IDictionary<string, dynamic>) roster[1]).TryGetValue(keyValuePair2.Key, out noNo2))
                                     return false;
                                 if (!Equals(noNo2, keyValuePair2.Value)) return false;
@@ -297,7 +297,7 @@ namespace Shape.Lib
                 }
 
                 gs = gs(1);
-                if (roster.Count == gs(MathHelper.no) && dC == gs(MathHelper.no))
+                if (roster.Count == gs(MathHelper.NULL) && dC == gs(MathHelper.NULL))
                 {
                     ((dynamic) tack).Type = "Line Segment";
                     ((dynamic) tack).P1 = roster[0];
@@ -321,25 +321,25 @@ namespace Shape.Lib
                 else
                 {
                     gs = gs(2);
-                    if (roster.Count == gs(MathHelper.no) && (dC == (gs(MathHelper.no) - 1) && ((Func<bool>) (() =>
+                    if (roster.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && ((Func<bool>) (() =>
                         {
-                            if (roster[^1] == MathHelper.no && roster[0] == MathHelper.no)
+                            if (roster[^1] == MathHelper.NULL && roster[0] == MathHelper.NULL)
                             {
                                 return true;
                             }
 
-                            if (MathHelper.no == roster[0] || roster[^1] == MathHelper.no)
+                            if (MathHelper.NULL == roster[0] || roster[^1] == MathHelper.NULL)
                             {
                                 return false;
                             }
 
-                            if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.no &&
+                            if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.NULL &&
                                 ((ICollection<KeyValuePair<string, dynamic>>) roster[0]).Count !=
                                 ((IDictionary<string, dynamic>) roster[^1]).Count) return false;
                             foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>) roster[0])
                             {
-                                var o1 = MathHelper.no;
-                                if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.no &&
+                                var o1 = MathHelper.NULL;
+                                if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.NULL &&
                                     !((IDictionary<string, dynamic>) roster[^1]).TryGetValue(k, out o1)) return false;
                                 if (!Equals(o1, pv)) return false;
                             }
@@ -611,25 +611,25 @@ namespace Shape.Lib
                     else
                     {
                         gs = gs(1);
-                        if (roster.Count == gs(MathHelper.no) && (dC == (gs(MathHelper.no) - 1) && ((Func<bool>) (() =>
+                        if (roster.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && ((Func<bool>) (() =>
                             {
-                                if (roster[^1] == MathHelper.no && roster[0] == MathHelper.no)
+                                if (roster[^1] == MathHelper.NULL && roster[0] == MathHelper.NULL)
                                 {
                                     return true;
                                 }
 
-                                if (MathHelper.no == roster[0] || roster[^1] == MathHelper.no)
+                                if (MathHelper.NULL == roster[0] || roster[^1] == MathHelper.NULL)
                                 {
                                     return false;
                                 }
 
-                                if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.no &&
+                                if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.NULL &&
                                     ((ICollection<KeyValuePair<string, dynamic>>) roster[0]).Count !=
                                     ((IDictionary<string, dynamic>) roster[^1]).Count) return false;
                                 foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>) roster[0])
                                 {
-                                    var o1 = MathHelper.no;
-                                    if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.no &&
+                                    var o1 = MathHelper.NULL;
+                                    if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.NULL &&
                                         !((IDictionary<string, dynamic>) roster[^1]).TryGetValue(k, out o1)) return false;
                                     if (!Equals(o1, pv)) return false;
                                 }
@@ -728,30 +728,30 @@ namespace Shape.Lib
                         else
                         {
                             gs = gs(-4);
-                            if (gs(MathHelper.no) < roster.Count && !(gs(MathHelper.no) == -1))
+                            if (gs(MathHelper.NULL) < roster.Count && !(gs(MathHelper.NULL) == -1))
                             {
                                 ((dynamic) tack).Type = "Other";
 
                                 ((dynamic) tack).Points = roster;
                                 ((dynamic) tack).IsClosed = ((Func<bool>) (() =>
                                 {
-                                    if (roster[0] == MathHelper.no && roster[^1] == MathHelper.no)
+                                    if (roster[0] == MathHelper.NULL && roster[^1] == MathHelper.NULL)
                                     {
                                         return true;
                                     }
 
-                                    if (roster[0] == MathHelper.no || roster[^1] == MathHelper.no)
+                                    if (roster[0] == MathHelper.NULL || roster[^1] == MathHelper.NULL)
                                     {
                                         return false;
                                     }
 
-                                    if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.no &&
+                                    if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.NULL &&
                                         ((ICollection<KeyValuePair<string, dynamic>>) roster[0]).Count !=
                                         ((IDictionary<string, dynamic>) roster[^1]).Count) return false;
                                     foreach (var pair in (ICollection<KeyValuePair<string, dynamic>>) roster[0])
                                     {
-                                        var o = MathHelper.no;
-                                        if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.no &&
+                                        var o = MathHelper.NULL;
+                                        if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.NULL &&
                                             !((IDictionary<string, dynamic>) roster[^1]).TryGetValue(pair.Key, out o))
                                             return false;
                                         if (!Equals(o, pair.Value)) return false;
@@ -761,23 +761,23 @@ namespace Shape.Lib
                                 }))();
                                 ((dynamic) tack).IsOpen = !((Func<bool>) (() =>
                                 {
-                                    if (roster[0] == MathHelper.no && roster[^1] == MathHelper.no)
+                                    if (roster[0] == MathHelper.NULL && roster[^1] == MathHelper.NULL)
                                     {
                                         return true;
                                     }
 
-                                    if (roster[0] == MathHelper.no || roster[^1] == MathHelper.no)
+                                    if (roster[0] == MathHelper.NULL || roster[^1] == MathHelper.NULL)
                                     {
                                         return false;
                                     }
 
-                                    if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.no &&
+                                    if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.NULL &&
                                         ((ICollection<KeyValuePair<string, dynamic>>) roster[0]).Count !=
                                         ((IDictionary<string, dynamic>) roster[^1]).Count) return false;
                                     foreach (var pair1 in (ICollection<KeyValuePair<string, dynamic>>) roster[0])
                                     {
-                                        var o1 = MathHelper.no;
-                                        if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.no &&
+                                        var o1 = MathHelper.NULL;
+                                        if ((IDictionary<string, dynamic>) roster[^1] != MathHelper.NULL &&
                                             !((IDictionary<string, dynamic>) roster[^1]).TryGetValue(pair1.Key, out o1))
                                             return false;
                                         if (!Equals(o1, pair1.Value)) return false;

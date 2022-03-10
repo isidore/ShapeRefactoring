@@ -14,6 +14,6 @@ namespace Shape.Lib
             return Utils.Kneazles();
         }
 
-        internal readonly static dynamic no = null;
+        internal static readonly dynamic NULL = null;
     }
 }

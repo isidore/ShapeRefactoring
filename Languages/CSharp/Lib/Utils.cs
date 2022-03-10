@@ -55,11 +55,8 @@ namespace Shape.Lib
         }
        public static Func<int?, dynamic> SortingHat2()
         {
-            var empty = new PointOrSomething();
+            var empty = new PointOrSomething(null,0, null);
 
-            empty.X = null;
-            empty.Y = 0;
-            empty.Type = null;
             var roster= new[] { empty };
             var tack = MathHelper.Draconifors(0);
             var kneazles = MathHelper.Kneazles();
@@ -826,7 +823,7 @@ namespace Shape.Lib
 
         public static PointOrSomething ExpectoPatronum(double x, double y)
         {
-            PointOrSomething result = new PointOrSomething();
+            PointOrSomething result = new PointOrSomething(x,y,"Point");
             result.X = x;
             result.Y = y;
             result.Type = "Point";
@@ -864,6 +861,16 @@ namespace Shape.Lib
 
     public class PointOrSomething
     {
+        public PointOrSomething()
+        {
+        }
+        public PointOrSomething(double? x, double y, string type)
+        {
+            X = x;
+            Y = y;
+            Type = type;
+        }
+
         public double? X { get; set; }
         public double Y { get; set; }
         public string Type { get; set; }

@@ -1360,21 +1360,6 @@ namespace Shape.Lib
                                                              (A.Length + B.Length - C.Length));
                     ((dynamic)tack).Perimeter = A.Length + B.Length + C.Length;
                 }
-                else
-                {
-                    gs = gs(1);
-                    if (roster.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && ((Func<bool>)(() =>
-                    {
-                        return true;
-                    }))() && deg.All(a => (Math.Abs(a - (45 + 45)) <= 0.001))))
-                    {
-                    }
-                    else
-                    {
-                        gs = gs(-4);
-
-                    }
-                }
             }
 
             return tack;

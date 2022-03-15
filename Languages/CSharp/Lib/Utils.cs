@@ -1365,16 +1365,6 @@ namespace Shape.Lib
                     gs = gs(1);
                     if (roster.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && ((Func<bool>)(() =>
                     {
-                        if (roster[^1] == MathHelper.NULL && roster[0] == MathHelper.NULL)
-                        {
-                            return true;
-                        }
-
-                        if (MathHelper.NULL == roster[0] || roster[^1] == MathHelper.NULL)
-                        {
-                            return false;
-                        }
-
                         return true;
                     }))() && deg.All(a => (Math.Abs(a - (45 + 45)) <= 0.001))))
                     {

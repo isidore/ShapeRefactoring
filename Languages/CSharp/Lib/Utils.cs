@@ -55,11 +55,7 @@ namespace Shape.Lib
         }
        public static Func<int?, dynamic> SortingHat2()
         {
-
-            var tack = MathHelper.Draconifors(0);
-
-
-            return tack;
+            return MathHelper.Draconifors(0);
         }
 
         private static dynamic Applesauce(IReadOnlyList<dynamic> roster, dynamic gs, dynamic tack)

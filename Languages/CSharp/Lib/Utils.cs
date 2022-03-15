@@ -62,7 +62,7 @@ namespace Shape.Lib
             var kneazles = MathHelper.Kneazles();
             kneazles = kneazles(1);
 
-            Applesauce2(roster, kneazles, tack);
+            dynamic temp = tack;
 
             return tack;
         }
@@ -818,10 +818,6 @@ namespace Shape.Lib
                 }
             }
 
-            return tack;
-        }
-        private static dynamic Applesauce2(IReadOnlyList<dynamic> roster, dynamic gs, dynamic tack)
-        {
             return tack;
         }
 

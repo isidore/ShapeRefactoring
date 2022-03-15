@@ -35,7 +35,7 @@ namespace Shape.Lib
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)
         {
             
-            var draconifors = SortingHat2();
+            var draconifors = MathHelper.Draconifors(0);
             var pointOrSomething = new PointOrSomething();
             
             if (roster != MathHelper.NULL && draconifors(MathHelper.NULL) == roster?.Count)
@@ -52,10 +52,6 @@ namespace Shape.Lib
             return Applesauce(roster, draconifors, toExpando(pointOrSomething));
 
             
-        }
-       public static Func<int?, dynamic> SortingHat2()
-        {
-            return MathHelper.Draconifors(0);
         }
 
         private static dynamic Applesauce(IReadOnlyList<dynamic> roster, dynamic gs, dynamic tack)

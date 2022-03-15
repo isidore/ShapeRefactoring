@@ -1073,33 +1073,7 @@ namespace Shape.Lib
             else
             {
                 gs = gs(2);
-                if (roster.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && ((Func<bool>)(() =>
-                {
-                    if (roster[^1] == MathHelper.NULL && roster[0] == MathHelper.NULL)
-                    {
-                        return true;
-                    }
-
-                    if (MathHelper.NULL == roster[0] || roster[^1] == MathHelper.NULL)
-                    {
-                        return false;
-                    }
-
-                    if ((IDictionary<string, dynamic>)roster[^1] != MathHelper.NULL &&
-                        ((ICollection<KeyValuePair<string, dynamic>>)roster[0]).Count !=
-                        ((IDictionary<string, dynamic>)roster[^1]).Count) return false;
-                    foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>)roster[0])
-                    {
-                        var o1 = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>)roster[^1] != MathHelper.NULL &&
-                            !((IDictionary<string, dynamic>)roster[^1]).TryGetValue(k, out o1)) return false;
-                        if (!Equals(o1, pv)) return false;
-                    }
-
-                    return true;
-                }))()))
-                {
-                }
+               
             }
 
             return tack;

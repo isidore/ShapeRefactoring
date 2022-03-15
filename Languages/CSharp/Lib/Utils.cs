@@ -1375,17 +1375,6 @@ namespace Shape.Lib
                             return false;
                         }
 
-                        if ((IDictionary<string, dynamic>)roster[^1] != MathHelper.NULL &&
-                            ((ICollection<KeyValuePair<string, dynamic>>)roster[0]).Count !=
-                            ((IDictionary<string, dynamic>)roster[^1]).Count) return false;
-                        foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>)roster[0])
-                        {
-                            var o1 = MathHelper.NULL;
-                            if ((IDictionary<string, dynamic>)roster[^1] != MathHelper.NULL &&
-                                !((IDictionary<string, dynamic>)roster[^1]).TryGetValue(k, out o1)) return false;
-                            if (!Equals(o1, pv)) return false;
-                        }
-
                         return true;
                     }))() && deg.All(a => (Math.Abs(a - (45 + 45)) <= 0.001))))
                     {

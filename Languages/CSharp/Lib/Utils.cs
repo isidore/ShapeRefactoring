@@ -1049,14 +1049,12 @@ namespace Shape.Lib
             }
 
             gs = gs(1);
-            if (roster.Count == gs(MathHelper.NULL) && dC == gs(MathHelper.NULL))
+            if (roster.Count != gs(MathHelper.NULL) || dC != gs(MathHelper.NULL))
             {
-             
+                gs = gs(2);
             }
             else
             {
-                gs = gs(2);
-               
             }
 
             return tack;

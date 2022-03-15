@@ -1051,24 +1051,7 @@ namespace Shape.Lib
             gs = gs(1);
             if (roster.Count == gs(MathHelper.NULL) && dC == gs(MathHelper.NULL))
             {
-                ((dynamic)tack).Type = "Line Segment";
-                ((dynamic)tack).P1 = roster[0];
-                ((dynamic)tack).P2 = roster[1];
-                ((dynamic)tack).Length =
-                    Math.Sqrt(Math.Pow(roster[0].X - roster[1].X, 2) + Math.Pow(roster[0].Y - roster[1].Y, 2));
-                var r = new ExpandoObject();
-                ((dynamic)tack).Slope = (Math.Abs((double)roster[1].X - roster[0].X) <= 0.0001)
-                    ? ((Func<dynamic>)(() =>
-                    {
-                        ((dynamic)r).IsSome = false;
-                        return r;
-                    }))()
-                    : ((Func<double, dynamic>)((v) =>
-                    {
-                        ((dynamic)r).IsSome = true;
-                        ((dynamic)r).Value = v;
-                        return r;
-                    }))(((double)roster[1].Y - roster[0].Y) / ((double)roster[1].X - roster[0].X));
+             
             }
             else
             {

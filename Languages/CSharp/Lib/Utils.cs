@@ -822,18 +822,6 @@ namespace Shape.Lib
         }
         private static dynamic Applesauce2(IReadOnlyList<dynamic> roster, dynamic gs, dynamic tack)
         {
-            if (roster == MathHelper.NULL)
-            {
-                return tack;
-            }
-
-            var deg = new List<dynamic>();
-
-
-
-            gs = gs(1);
-           
-
             return tack;
         }
 

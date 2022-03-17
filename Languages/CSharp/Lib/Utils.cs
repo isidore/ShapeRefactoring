@@ -27,11 +27,6 @@ namespace Shape.Lib
             return GetColourFunction(() => s, (v) => MathHelper.Draconifors(s + v.Value));
         }
 
-        public static Func<int?, dynamic> Kneazles()
-        {
-            return GetColourFunction(() => -1, (v) => MathHelper.Kneazles());
-        }
-
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)
         {
             

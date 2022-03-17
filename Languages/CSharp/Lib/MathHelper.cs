@@ -9,10 +9,7 @@ namespace Shape.Lib
             return Utils.Draconifors(s);
         }
 
-        public static Func<int?, dynamic> Kneazles()
-        {
-            return Utils.Kneazles();
-        }
+   
 
         internal static readonly dynamic NULL = null;
     }

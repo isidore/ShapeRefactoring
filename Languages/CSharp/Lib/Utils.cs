@@ -38,7 +38,7 @@ namespace Shape.Lib
             var draconifors = MathHelper.Draconifors(0);
             var pointOrSomething = new PointOrSomething();
 
-            if (roster != MathHelper.NULL && 0 == roster?.Count)
+            if (roster != MathHelper.NULL && roster?.Count == 0)
             {
                 pointOrSomething.Type = "Empty";
             }

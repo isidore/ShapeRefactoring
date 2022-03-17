@@ -35,7 +35,6 @@ namespace Shape.Lib
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)
         {
             
-            var draconifors = MathHelper.Draconifors(0);
             var pointOrSomething = new PointOrSomething();
 
             if (roster != MathHelper.NULL && roster?.Count == 0)
@@ -43,7 +42,7 @@ namespace Shape.Lib
                 pointOrSomething.Type = "Empty";
             }
             
-            draconifors = draconifors(1);
+            var draconifors = MathHelper.Draconifors(0)(1);
             if (roster != MathHelper.NULL && draconifors(MathHelper.NULL) == roster?.Count && !roster?[0]?.X.ToString().Equals(null))
             {
                 if (roster != MathHelper.NULL) pointOrSomething = toPointOrSomething(roster?[0]);

@@ -16,16 +16,10 @@ namespace Shape.Lib
                     return startingNumber;
                 }
 
-                return Utils.Draconifors(startingNumber + v.Value);
+                return ReturnsAFunction(startingNumber + v.Value);
             }
 
             return addToStartingNumberIfNotNull;
-        }
-
-        public static Func<int?, dynamic> Draconifors(int s)
-        {
-            Func<int?, dynamic> add = (v) => Utils.Draconifors(s + v.Value);
-            return ReturnsAFunction(s);
         }
 
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)
@@ -42,7 +36,7 @@ namespace Shape.Lib
             {
                 if (roster != MathHelper.NULL) pointOrSomething = toPointOrSomething(roster?[0]);
             }
-            var draconifors = Utils.Draconifors(1);
+            var draconifors = ReturnsAFunction(1);
 
             return Applesauce(roster, draconifors, toExpando(pointOrSomething));
 

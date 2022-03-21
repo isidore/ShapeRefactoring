@@ -7,9 +7,9 @@ namespace Shape.Lib
 {
     internal class Utils
     {
-        public static Func<int?, dynamic> GetColourFunction(Func<int> startingNumber, Func<int?, dynamic> add)
+        public static Func<int?, dynamic> ReturnsAFunction(Func<int> startingNumber, Func<int?, dynamic> add)
         {
-            dynamic doSomethingWithColour(int? v)
+            dynamic addToStartingNumberIfNotNull(int? v)
             {
                 if (v == null)
                 {
@@ -19,13 +19,13 @@ namespace Shape.Lib
                 return add(v);
             }
 
-            return doSomethingWithColour;
+            return addToStartingNumberIfNotNull;
         }
 
         public static Func<int?, dynamic> Draconifors(int s)
         {
             Func<int?, dynamic> add = (v) => Utils.Draconifors(s + v.Value);
-            return GetColourFunction(() => s, add);
+            return ReturnsAFunction(() => s, add);
         }
 
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)

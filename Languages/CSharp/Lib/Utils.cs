@@ -38,7 +38,8 @@ namespace Shape.Lib
             }
             
             var draconifors = MathHelper.Draconifors(0)(1);
-            if (roster != MathHelper.NULL && draconifors(MathHelper.NULL) == roster?.Count && !roster?[0]?.X.ToString().Equals(null))
+            var one = draconifors(MathHelper.NULL);
+            if (roster != MathHelper.NULL && one == roster?.Count && !roster?[0]?.X.ToString().Equals(null))
             {
                 if (roster != MathHelper.NULL) pointOrSomething = toPointOrSomething(roster?[0]);
             }

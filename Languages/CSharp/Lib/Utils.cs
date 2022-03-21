@@ -7,7 +7,7 @@ namespace Shape.Lib
 {
     internal class Utils
     {
-        public static Func<int?, dynamic> GetColourFunction(Func<int> startingNumber, Func<int?, dynamic> color)
+        public static Func<int?, dynamic> GetColourFunction(Func<int> startingNumber, Func<int?, dynamic> add)
         {
             dynamic doSomethingWithColour(int? v)
             {
@@ -16,7 +16,7 @@ namespace Shape.Lib
                     return startingNumber();
                 }
 
-                return color(v);
+                return add(v);
             }
 
             return doSomethingWithColour;

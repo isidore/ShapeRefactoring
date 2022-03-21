@@ -39,6 +39,11 @@ namespace Shape.Lib
             {
                 pointOrSomething = toPointOrSomething(roster[0]);
             }
+            else
+            {
+
+
+            }
             return Applesauce(roster, pointOrSomething);
 
             

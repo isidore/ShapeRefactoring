@@ -39,15 +39,15 @@ namespace Shape.Lib
             {
                 pointOrSomething = toPointOrSomething(roster[0]);
             }
-            return Applesauce(roster, toExpando(pointOrSomething));
+            return Applesauce(roster, pointOrSomething);
 
             
         }
 
-        private static dynamic Applesauce(IReadOnlyList<dynamic> listOfPoints, dynamic firstPoint)
+        private static dynamic Applesauce(IReadOnlyList<dynamic> listOfPoints, PointOrSomething firstPoint1)
         {
             var gs = ReturnsAFunction(1);
-
+            dynamic firstPoint = toExpando(firstPoint1);
             if (listOfPoints == MathHelper.NULL)
             {
                 return firstPoint;

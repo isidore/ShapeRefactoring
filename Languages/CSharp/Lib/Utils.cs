@@ -34,17 +34,18 @@ namespace Shape.Lib
             
             if (roster != MathHelper.NULL && roster?.Count == 1 && !roster?[0]?.X.ToString().Equals(null))
             {
-                if (roster != MathHelper.NULL) pointOrSomething = toPointOrSomething(roster?[0]);
+                pointOrSomething = toPointOrSomething(roster?[0]);
             }
-            var draconifors = ReturnsAFunction(1);
 
-            return Applesauce(roster, draconifors, toExpando(pointOrSomething));
+            return Applesauce(roster, toExpando(pointOrSomething));
 
             
         }
 
-        private static dynamic Applesauce(IReadOnlyList<dynamic> roster, dynamic gs, dynamic tack)
+        private static dynamic Applesauce(IReadOnlyList<dynamic> roster, dynamic tack)
         {
+            var gs = ReturnsAFunction(1);
+
             if (roster == MathHelper.NULL)
             {
                 return tack;

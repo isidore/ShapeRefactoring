@@ -38,7 +38,6 @@ namespace Shape.Lib
             else
             {
                 var pointOrSomething = new PointOrSomething();
-                pointOrSomething.Type = "Empty";
                 return Applesauce(roster, pointOrSomething);
             }
 
@@ -843,6 +842,7 @@ namespace Shape.Lib
     {
         public PointOrSomething()
         {
+            Type = "Empty";
         }
         public PointOrSomething(double? x, double y, string type)
         {

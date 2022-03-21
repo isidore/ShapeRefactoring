@@ -16,7 +16,7 @@ namespace Shape.Lib
                     return startingNumber;
                 }
 
-                return add(v);
+                return Utils.Draconifors(startingNumber + v.Value);
             }
 
             return addToStartingNumberIfNotNull;

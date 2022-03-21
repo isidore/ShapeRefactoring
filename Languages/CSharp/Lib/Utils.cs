@@ -24,7 +24,7 @@ namespace Shape.Lib
 
         public static Func<int?, dynamic> Draconifors(int s)
         {
-            return GetColourFunction(() => s, (v) => MathHelper.Draconifors(s + v.Value));
+            return GetColourFunction(() => s, (v) => Utils.Draconifors(s + v.Value));
         }
 
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)
@@ -41,7 +41,7 @@ namespace Shape.Lib
             {
                 if (roster != MathHelper.NULL) pointOrSomething = toPointOrSomething(roster?[0]);
             }
-            var draconifors = MathHelper.Draconifors(0)(1);
+            var draconifors = Utils.Draconifors(0)(1);
 
             return Applesauce(roster, draconifors, toExpando(pointOrSomething));
 

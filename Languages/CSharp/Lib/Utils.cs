@@ -35,9 +35,9 @@ namespace Shape.Lib
                 pointOrSomething.Type = "Empty";
             }
             
-            if (roster != MathHelper.NULL && roster?.Count == 1 && !roster?[0]?.X.ToString().Equals(null))
+            if (roster.Count == 1 && !roster[0]?.X.ToString().Equals(null))
             {
-                pointOrSomething = toPointOrSomething(roster?[0]);
+                pointOrSomething = toPointOrSomething(roster[0]);
             }
             return Applesauce(roster, toExpando(pointOrSomething));
 

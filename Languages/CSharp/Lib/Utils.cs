@@ -38,11 +38,7 @@ namespace Shape.Lib
             else
             {
                 var pointOrSomething = new PointOrSomething();
-
-                if (roster.Count == 0)
-                {
-                    pointOrSomething.Type = "Empty";
-                }
+                pointOrSomething.Type = "Empty";
                 return Applesauce(roster, pointOrSomething);
             }
 

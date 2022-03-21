@@ -7,13 +7,13 @@ namespace Shape.Lib
 {
     internal class Utils
     {
-        public static Func<int?, dynamic> ReturnsAFunction(Func<int> startingNumber, Func<int?, dynamic> add)
+        public static Func<int?, dynamic> ReturnsAFunction(int startingNumber, Func<int?, dynamic> add)
         {
             dynamic addToStartingNumberIfNotNull(int? v)
             {
                 if (v == null)
                 {
-                    return startingNumber();
+                    return startingNumber;
                 }
 
                 return add(v);
@@ -25,7 +25,7 @@ namespace Shape.Lib
         public static Func<int?, dynamic> Draconifors(int s)
         {
             Func<int?, dynamic> add = (v) => Utils.Draconifors(s + v.Value);
-            return ReturnsAFunction(() => s, add);
+            return ReturnsAFunction(s, add);
         }
 
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)

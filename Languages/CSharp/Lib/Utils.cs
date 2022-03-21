@@ -33,7 +33,6 @@ namespace Shape.Lib
             if (roster.Count == 1 && roster[0].X.ToString() != null)
             {
                 return  roster[0];
-
             }
             else
             {
@@ -47,10 +46,7 @@ namespace Shape.Lib
         {
             var gs = ReturnsAFunction(1);
             dynamic firstPoint = toExpando(firstPoint1);
-            if (listOfPoints == MathHelper.NULL)
-            {
-                return firstPoint;
-            }
+          
             var dC = listOfPoints?.Distinct(new Checker<dynamic>((pa, pb) =>
             {
                 if (pb == MathHelper.NULL && pa == MathHelper.NULL)

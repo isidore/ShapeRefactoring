@@ -24,7 +24,10 @@ namespace Shape.Lib
 
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)
         {
-            
+            if (roster == MathHelper.NULL)
+            {
+                return toExpando(new PointOrSomething());
+            }
             var pointOrSomething = new PointOrSomething();
 
             if (roster != MathHelper.NULL && roster?.Count == 0)
@@ -36,7 +39,6 @@ namespace Shape.Lib
             {
                 pointOrSomething = toPointOrSomething(roster?[0]);
             }
-
             return Applesauce(roster, toExpando(pointOrSomething));
 
             

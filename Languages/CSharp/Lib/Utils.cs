@@ -30,7 +30,7 @@ namespace Shape.Lib
             }
             var pointOrSomething = new PointOrSomething();
 
-            if (roster != MathHelper.NULL && roster?.Count == 0)
+            if ( roster.Count == 0)
             {
                 pointOrSomething.Type = "Empty";
             }

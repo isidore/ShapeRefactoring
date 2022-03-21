@@ -35,7 +35,7 @@ namespace Shape.Lib
                 pointOrSomething.Type = "Empty";
             }
             
-            if (roster.Count == 1 && !roster[0]?.X.ToString().Equals(null))
+            if (roster.Count == 1 && roster[0].X.ToString() != null)
             {
                 pointOrSomething = toPointOrSomething(roster[0]);
             }

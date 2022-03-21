@@ -26,7 +26,7 @@ namespace Shape.Lib
         {
             if (roster == MathHelper.NULL)
             {
-                return toExpando(new PointOrSomething());
+                return toExpando(new Shape());
             }
           
             
@@ -37,14 +37,14 @@ namespace Shape.Lib
             }
             else
             {
-                var pointOrSomething = new PointOrSomething();
+                var pointOrSomething = new Shape();
                 return Applesauce(roster, pointOrSomething);
             }
 
 
         }
 
-        private static dynamic Applesauce(IReadOnlyList<dynamic> listOfPoints, PointOrSomething firstPoint1)
+        private static dynamic Applesauce(IReadOnlyList<dynamic> listOfPoints, Shape firstPoint1)
         {
             var gs = ReturnsAFunction(1);
             dynamic firstPoint = toExpando(firstPoint1);
@@ -800,16 +800,16 @@ namespace Shape.Lib
             return firstPoint;
         }
 
-        public static PointOrSomething ExpectoPatronum(double x, double y)
+        public static Shape ExpectoPatronum(double x, double y)
         {
-            PointOrSomething result = new PointOrSomething(x,y,"Point");
+            Shape result = new Shape(x,y,"Point");
             result.X = x;
             result.Y = y;
             result.Type = "Point";
             return result;
         }
 
-        public static dynamic toExpando(PointOrSomething f)
+        public static dynamic toExpando(Shape f)
         {
             dynamic e = new ExpandoObject();
             e.X = f.X;
@@ -817,9 +817,9 @@ namespace Shape.Lib
             e.Type = f.Type;
             return e;
         }
-        public static PointOrSomething toPointOrSomething(dynamic f)
+        public static Shape toPointOrSomething(dynamic f)
         {
-            var e = new PointOrSomething();
+            var e = new Shape();
             e.X = f.X;
             e.Y = f.Y;
             e.Type = f.Type;
@@ -838,13 +838,13 @@ namespace Shape.Lib
         }
     }
 
-    public class PointOrSomething
+    public class Shape
     {
-        public PointOrSomething()
+        public Shape()
         {
             Type = "Empty";
         }
-        public PointOrSomething(double? x, double y, string type)
+        public Shape(double? x, double y, string type)
         {
             X = x;
             Y = y;

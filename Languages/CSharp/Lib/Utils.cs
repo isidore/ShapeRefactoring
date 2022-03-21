@@ -41,7 +41,7 @@ namespace Shape.Lib
             {
                 if (roster != MathHelper.NULL) pointOrSomething = toPointOrSomething(roster?[0]);
             }
-            var draconifors = Utils.Draconifors(0)(1);
+            var draconifors = Utils.Draconifors(1);
 
             return Applesauce(roster, draconifors, toExpando(pointOrSomething));
 

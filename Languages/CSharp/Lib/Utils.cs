@@ -24,7 +24,8 @@ namespace Shape.Lib
 
         public static Func<int?, dynamic> Draconifors(int s)
         {
-            return GetColourFunction(() => s, (v) => Utils.Draconifors(s + v.Value));
+            Func<int?, dynamic> add = (v) => Utils.Draconifors(s + v.Value);
+            return GetColourFunction(() => s, add);
         }
 
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)

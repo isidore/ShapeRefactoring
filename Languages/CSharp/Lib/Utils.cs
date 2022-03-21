@@ -37,11 +37,11 @@ namespace Shape.Lib
                 pointOrSomething.Type = "Empty";
             }
             
-            var draconifors = MathHelper.Draconifors(0)(1);
             if (roster != MathHelper.NULL && roster?.Count == 1 && !roster?[0]?.X.ToString().Equals(null))
             {
                 if (roster != MathHelper.NULL) pointOrSomething = toPointOrSomething(roster?[0]);
             }
+            var draconifors = MathHelper.Draconifors(0)(1);
 
             return Applesauce(roster, draconifors, toExpando(pointOrSomething));
 

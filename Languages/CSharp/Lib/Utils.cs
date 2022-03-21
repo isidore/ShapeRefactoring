@@ -32,7 +32,7 @@ namespace Shape.Lib
             
             if (roster.Count == 1 && roster[0].X.ToString() != null)
             {
-                return Applesauce(roster, toPointOrSomething(roster[0]));
+                return  roster[0];
 
             }
             else

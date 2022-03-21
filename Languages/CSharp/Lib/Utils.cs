@@ -28,25 +28,26 @@ namespace Shape.Lib
             {
                 return toExpando(new PointOrSomething());
             }
-            var pointOrSomething = new PointOrSomething();
-
-            if ( roster.Count == 0)
-            {
-                pointOrSomething.Type = "Empty";
-            }
+          
             
             if (roster.Count == 1 && roster[0].X.ToString() != null)
             {
-                pointOrSomething = toPointOrSomething(roster[0]);
+                var pointOrSomething = toPointOrSomething(roster[0]);
+                return Applesauce(roster, pointOrSomething);
+
             }
             else
             {
+                var pointOrSomething = new PointOrSomething();
 
-
+                if (roster.Count == 0)
+                {
+                    pointOrSomething.Type = "Empty";
+                }
+                return Applesauce(roster, pointOrSomething);
             }
-            return Applesauce(roster, pointOrSomething);
 
-            
+
         }
 
         private static dynamic Applesauce(IReadOnlyList<dynamic> listOfPoints, PointOrSomething firstPoint1)

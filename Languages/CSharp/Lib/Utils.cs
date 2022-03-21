@@ -37,8 +37,7 @@ namespace Shape.Lib
             }
             else
             {
-                var pointOrSomething = new Shape();
-                return Applesauce(roster, pointOrSomething);
+                return Applesauce(roster, new Shape());
             }
 
 

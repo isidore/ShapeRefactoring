@@ -322,7 +322,8 @@ namespace Shape.Lib
                 ((dynamic) firstPoint).Type = "Other";
 
                 ((dynamic) firstPoint).Points = listOfPoints;
-                ((dynamic) firstPoint).IsClosed = ((Func<bool>) (() =>
+
+                bool OJ7()
                 {
                     if (listOfPoints[0] == MathHelper.NULL && listOfPoints[^1] == MathHelper.NULL)
                     {
@@ -334,20 +335,18 @@ namespace Shape.Lib
                         return false;
                     }
 
-                    if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL &&
-                        ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0]).Count !=
-                        ((IDictionary<string, dynamic>) listOfPoints[^1]).Count) return false;
+                    if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0]).Count != ((IDictionary<string, dynamic>) listOfPoints[^1]).Count) return false;
                     foreach (var pair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0])
                     {
                         var o = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL &&
-                            !((IDictionary<string, dynamic>) listOfPoints[^1]).TryGetValue(pair.Key, out o))
-                            return false;
+                        if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[^1]).TryGetValue(pair.Key, out o)) return false;
                         if (!Equals(o, pair.Value)) return false;
                     }
 
                     return true;
-                }))();
+                }
+
+                ((dynamic) firstPoint).IsClosed = ((Func<bool>) (OJ7))();
                 ((dynamic) firstPoint).IsOpen = !((Func<bool>) (() =>
                 {
                     if (listOfPoints[0] == MathHelper.NULL && listOfPoints[^1] == MathHelper.NULL)

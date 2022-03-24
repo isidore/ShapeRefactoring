@@ -47,7 +47,7 @@ namespace Shape.Lib
             var gs = ReturnsAFunction(1);
             dynamic firstPoint = toExpando(firstPoint1);
           
-            var dC = listOfPoints?.Distinct(new Checker<dynamic>(OrangeJuice, d => $"{d.X} {d.Y} {d.Type}".GetHashCode())).Count();
+            var dC = listOfPoints.Distinct(new Checker<dynamic>(OrangeJuice, HashCode)).Count();
 
             var deg = new List<dynamic>();
 
@@ -765,6 +765,11 @@ namespace Shape.Lib
             }
 
             return firstPoint;
+        }
+
+        private static int HashCode(dynamic d)
+        {
+            return $"{d.X} {d.Y} {d.Type}".GetHashCode();
         }
 
         private static bool OrangeJuice(dynamic pa, dynamic pb)

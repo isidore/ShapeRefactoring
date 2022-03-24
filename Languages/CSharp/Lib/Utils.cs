@@ -306,99 +306,104 @@ namespace Shape.Lib
                     }
                     else
                     {
-                        gs = gs(-4);
-                        if (gs(MathHelper.NULL) < listOfPoints.Count && !(gs(MathHelper.NULL) == -1))
-                        {
-                            ((dynamic)firstPoint).Type = "Other";
-
-                            ((dynamic)firstPoint).Points = listOfPoints;
-                            ((dynamic)firstPoint).IsClosed = ((Func<bool>)(() =>
-                            {
-                                if (listOfPoints[0] == MathHelper.NULL && listOfPoints[^1] == MathHelper.NULL)
-                                {
-                                    return true;
-                                }
-
-                                if (listOfPoints[0] == MathHelper.NULL || listOfPoints[^1] == MathHelper.NULL)
-                                {
-                                    return false;
-                                }
-
-                                if ((IDictionary<string, dynamic>)listOfPoints[^1] != MathHelper.NULL &&
-                                    ((ICollection<KeyValuePair<string, dynamic>>)listOfPoints[0]).Count !=
-                                    ((IDictionary<string, dynamic>)listOfPoints[^1]).Count) return false;
-                                foreach (var pair in (ICollection<KeyValuePair<string, dynamic>>)listOfPoints[0])
-                                {
-                                    var o = MathHelper.NULL;
-                                    if ((IDictionary<string, dynamic>)listOfPoints[^1] != MathHelper.NULL &&
-                                        !((IDictionary<string, dynamic>)listOfPoints[^1]).TryGetValue(pair.Key, out o))
-                                        return false;
-                                    if (!Equals(o, pair.Value)) return false;
-                                }
-
-                                return true;
-                            }))();
-                            ((dynamic)firstPoint).IsOpen = !((Func<bool>)(() =>
-                            {
-                                if (listOfPoints[0] == MathHelper.NULL && listOfPoints[^1] == MathHelper.NULL)
-                                {
-                                    return true;
-                                }
-
-                                if (listOfPoints[0] == MathHelper.NULL || listOfPoints[^1] == MathHelper.NULL)
-                                {
-                                    return false;
-                                }
-
-                                if ((IDictionary<string, dynamic>)listOfPoints[^1] != MathHelper.NULL &&
-                                    ((ICollection<KeyValuePair<string, dynamic>>)listOfPoints[0]).Count !=
-                                    ((IDictionary<string, dynamic>)listOfPoints[^1]).Count) return false;
-                                foreach (var pair1 in (ICollection<KeyValuePair<string, dynamic>>)listOfPoints[0])
-                                {
-                                    var o1 = MathHelper.NULL;
-                                    if ((IDictionary<string, dynamic>)listOfPoints[^1] != MathHelper.NULL &&
-                                        !((IDictionary<string, dynamic>)listOfPoints[^1]).TryGetValue(pair1.Key, out o1))
-                                        return false;
-                                    if (!Equals(o1, pair1.Value)) return false;
-                                }
-
-                                return true;
-                            }))();
-
-                            var segments = new List<double>();
-
-                            for (var i = 1; i < listOfPoints.Count; i++)
-                            {
-                                dynamic side = new ExpandoObject();
-                                side.Type = "Line Segment";
-                                side.P1 = listOfPoints[i - 1];
-                                side.P2 = listOfPoints[i];
-                                side.Length = Math.Sqrt(Math.Pow(listOfPoints[i - 1].X - listOfPoints[i].X, 2) +
-                                                        Math.Pow(listOfPoints[i - 1].Y - listOfPoints[i].Y, 2));
-                                dynamic r = new ExpandoObject();
-                                side.Slope = (Math.Abs((double)listOfPoints[i].X - listOfPoints[i - 1].X) <= 0.0001)
-                                    ? ((Func<dynamic>)(() =>
-                                    {
-                                        r.IsSome = false;
-                                        return r;
-                                    }))()
-                                    : ((Func<double, dynamic>)((v) =>
-                                    {
-                                        r.IsSome = true;
-                                        r.Value = v;
-                                        return r;
-                                    }))(((double)listOfPoints[i].Y - listOfPoints[i - 1].Y) /
-                                        ((double)listOfPoints[i].X - listOfPoints[i - 1].X));
-                                segments.Add(side.Length);
-                            }
-
-                            ((dynamic)firstPoint).Length = segments.Sum();
-                        }
+                        Banana4(listOfPoints, gs, firstPoint);
                     }
                 }
             }
 
             return firstPoint;
+        }
+
+        private static void Banana4(IReadOnlyList<dynamic> listOfPoints, Func<int?, dynamic> gs, dynamic firstPoint)
+        {
+            gs = gs(-4);
+            if (gs(MathHelper.NULL) < listOfPoints.Count && !(gs(MathHelper.NULL) == -1))
+            {
+                ((dynamic) firstPoint).Type = "Other";
+
+                ((dynamic) firstPoint).Points = listOfPoints;
+                ((dynamic) firstPoint).IsClosed = ((Func<bool>) (() =>
+                {
+                    if (listOfPoints[0] == MathHelper.NULL && listOfPoints[^1] == MathHelper.NULL)
+                    {
+                        return true;
+                    }
+
+                    if (listOfPoints[0] == MathHelper.NULL || listOfPoints[^1] == MathHelper.NULL)
+                    {
+                        return false;
+                    }
+
+                    if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL &&
+                        ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0]).Count !=
+                        ((IDictionary<string, dynamic>) listOfPoints[^1]).Count) return false;
+                    foreach (var pair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0])
+                    {
+                        var o = MathHelper.NULL;
+                        if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL &&
+                            !((IDictionary<string, dynamic>) listOfPoints[^1]).TryGetValue(pair.Key, out o))
+                            return false;
+                        if (!Equals(o, pair.Value)) return false;
+                    }
+
+                    return true;
+                }))();
+                ((dynamic) firstPoint).IsOpen = !((Func<bool>) (() =>
+                {
+                    if (listOfPoints[0] == MathHelper.NULL && listOfPoints[^1] == MathHelper.NULL)
+                    {
+                        return true;
+                    }
+
+                    if (listOfPoints[0] == MathHelper.NULL || listOfPoints[^1] == MathHelper.NULL)
+                    {
+                        return false;
+                    }
+
+                    if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL &&
+                        ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0]).Count !=
+                        ((IDictionary<string, dynamic>) listOfPoints[^1]).Count) return false;
+                    foreach (var pair1 in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0])
+                    {
+                        var o1 = MathHelper.NULL;
+                        if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL &&
+                            !((IDictionary<string, dynamic>) listOfPoints[^1]).TryGetValue(pair1.Key, out o1))
+                            return false;
+                        if (!Equals(o1, pair1.Value)) return false;
+                    }
+
+                    return true;
+                }))();
+
+                var segments = new List<double>();
+
+                for (var i = 1; i < listOfPoints.Count; i++)
+                {
+                    dynamic side = new ExpandoObject();
+                    side.Type = "Line Segment";
+                    side.P1 = listOfPoints[i - 1];
+                    side.P2 = listOfPoints[i];
+                    side.Length = Math.Sqrt(Math.Pow(listOfPoints[i - 1].X - listOfPoints[i].X, 2) +
+                                            Math.Pow(listOfPoints[i - 1].Y - listOfPoints[i].Y, 2));
+                    dynamic r = new ExpandoObject();
+                    side.Slope = (Math.Abs((double) listOfPoints[i].X - listOfPoints[i - 1].X) <= 0.0001)
+                        ? ((Func<dynamic>) (() =>
+                        {
+                            r.IsSome = false;
+                            return r;
+                        }))()
+                        : ((Func<double, dynamic>) ((v) =>
+                        {
+                            r.IsSome = true;
+                            r.Value = v;
+                            return r;
+                        }))(((double) listOfPoints[i].Y - listOfPoints[i - 1].Y) /
+                            ((double) listOfPoints[i].X - listOfPoints[i - 1].X));
+                    segments.Add(side.Length);
+                }
+
+                ((dynamic) firstPoint).Length = segments.Sum();
+            }
         }
 
         private static void Banana3(IReadOnlyList<dynamic> listOfPoints, dynamic firstPoint)

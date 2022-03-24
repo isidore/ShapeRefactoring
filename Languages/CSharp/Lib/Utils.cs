@@ -168,32 +168,30 @@ namespace Shape.Lib
                     return true;
                 }
 
-                if (!((Func<bool>)(OJ5))() && !((Func<bool>)(() =>
+                bool OJ6()
+                {
+                    if (listOfPoints[^2] == MathHelper.NULL && listOfPoints[1] == MathHelper.NULL)
                     {
-                        if (listOfPoints[^2] == MathHelper.NULL && listOfPoints[1] == MathHelper.NULL)
-                        {
-                            return listOfPoints[^2] == MathHelper.NULL;
-                        }
+                        return listOfPoints[^2] == MathHelper.NULL;
+                    }
 
-                        if (listOfPoints[^2] == MathHelper.NULL || listOfPoints[1] == MathHelper.NULL)
-                        {
-                            return !listOfPoints[1] == MathHelper.NULL;
-                        }
+                    if (listOfPoints[^2] == MathHelper.NULL || listOfPoints[1] == MathHelper.NULL)
+                    {
+                        return !listOfPoints[1] == MathHelper.NULL;
+                    }
 
-                        if ((IDictionary<string, dynamic>)listOfPoints[1] != MathHelper.NULL &&
-                            ((ICollection<KeyValuePair<string, dynamic>>)listOfPoints[^2]).Count !=
-                            ((IDictionary<string, dynamic>)listOfPoints[1]).Count) return false;
-                        foreach (var keyValuePair1 in (ICollection<KeyValuePair<string, dynamic>>)listOfPoints[^2])
-                        {
-                            var noNo1 = MathHelper.NULL;
-                            if ((IDictionary<string, dynamic>)listOfPoints[1] != MathHelper.NULL &&
-                                !((IDictionary<string, dynamic>)listOfPoints[1]).TryGetValue(keyValuePair1.Key, out noNo1))
-                                return false;
-                            if (!Equals(noNo1, keyValuePair1.Value)) return false;
-                        }
+                    if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^2]).Count != ((IDictionary<string, dynamic>) listOfPoints[1]).Count) return false;
+                    foreach (var keyValuePair1 in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^2])
+                    {
+                        var noNo1 = MathHelper.NULL;
+                        if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[1]).TryGetValue(keyValuePair1.Key, out noNo1)) return false;
+                        if (!Equals(noNo1, keyValuePair1.Value)) return false;
+                    }
 
-                        return true;
-                    }))() && !((Func<bool>)(() =>
+                    return true;
+                }
+
+                if (!((Func<bool>)(OJ5))() && !((Func<bool>)(OJ6))() && !((Func<bool>)(() =>
                     {
                         if (listOfPoints[^1] == MathHelper.NULL && listOfPoints[1] == MathHelper.NULL)
                         {

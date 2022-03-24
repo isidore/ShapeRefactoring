@@ -210,6 +210,21 @@ namespace Shape.Lib
                     return true;
                 }
 
+                bool OJ9()
+                {
+                       
+
+                    if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0]).Count != ((IDictionary<string, dynamic>) listOfPoints[^1]).Count) return false;
+                    foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0])
+                    {
+                        var o1 = MathHelper.NULL;
+                        if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[^1]).TryGetValue(k, out o1)) return false;
+                        if (!Equals(o1, pv)) return false;
+                    }
+
+                    return true;
+                }
+
                 if (listOfPoints.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && ((Func<bool>)(OJ8))()))
                 {
                     Banana2(listOfPoints, firstPoint);
@@ -217,21 +232,6 @@ namespace Shape.Lib
                 else
                 {
                     gs = gs(1);
-
-                    bool OJ9()
-                    {
-                       
-
-                        if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0]).Count != ((IDictionary<string, dynamic>) listOfPoints[^1]).Count) return false;
-                        foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0])
-                        {
-                            var o1 = MathHelper.NULL;
-                            if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[^1]).TryGetValue(k, out o1)) return false;
-                            if (!Equals(o1, pv)) return false;
-                        }
-
-                        return true;
-                    }
 
                     if (listOfPoints.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && ((Func<bool>)(OJ9))() && deg.All(a => (Math.Abs(a - (45 + 45)) <= 0.001))))
                     {

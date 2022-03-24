@@ -302,93 +302,7 @@ namespace Shape.Lib
 
                     if (listOfPoints.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && ((Func<bool>)(OJ9))() && deg.All(a => (Math.Abs(a - (45 + 45)) <= 0.001))))
                     {
-                        ((dynamic)firstPoint).Type = "Rectangle";
-                        ((dynamic)firstPoint).P1 = listOfPoints[0];
-                        ((dynamic)firstPoint).P2 = listOfPoints[1];
-                        ((dynamic)firstPoint).P3 = listOfPoints[2];
-                        ((dynamic)firstPoint).P4 = listOfPoints[3];
-                        dynamic Ad = new ExpandoObject();
-                        dynamic Bd = new ExpandoObject();
-                        dynamic Cd = new ExpandoObject();
-                        dynamic D = new ExpandoObject();
-                        Ad.Type = "Line Segment";
-                        Ad.P1 = listOfPoints[0];
-                        Ad.P2 = listOfPoints[1];
-                        Ad.Length = Math.Sqrt(Math.Pow(listOfPoints[0].X - listOfPoints[1].X, 2) +
-                                              Math.Pow(listOfPoints[0].Y - listOfPoints[1].Y, 2));
-                        dynamic r = new ExpandoObject();
-                        Ad.Slope = (Math.Abs((double)listOfPoints[1].X - listOfPoints[0].X) <= 0.0001)
-                            ? ((Func<dynamic>)(() =>
-                            {
-                                r.IsSome = false;
-                                return r;
-                            }))()
-                            : ((Func<double, dynamic>)((v) =>
-                            {
-                                r.IsSome = true;
-                                r.Value = v;
-                                return r;
-                            }))(((double)listOfPoints[1].Y - listOfPoints[0].Y) / ((double)listOfPoints[1].X - listOfPoints[0].X));
-                        Bd.Type = "Line Segment";
-                        Bd.P1 = listOfPoints[1];
-                        Bd.P2 = listOfPoints[2];
-                        Bd.Length = Math.Sqrt(Math.Pow(listOfPoints[1].X - listOfPoints[2].X, 2) +
-                                              Math.Pow(listOfPoints[1].Y - listOfPoints[2].Y, 2));
-                        dynamic r1 = new ExpandoObject();
-                        Bd.Slope = (Math.Abs((double)listOfPoints[2].X - listOfPoints[1].X) <= 0.0001)
-                            ? ((Func<dynamic>)(() =>
-                            {
-                                r1.IsSome = false;
-                                return r1;
-                            }))()
-                            : ((Func<double, dynamic>)(((v1) =>
-                            {
-                                r1.IsSome = true;
-                                r1.Value = v1;
-                                return r1;
-                            })))(((double)listOfPoints[2].Y - listOfPoints[1].Y) / ((double)listOfPoints[2].X - listOfPoints[1].X));
-                        Cd.Type = "Line Segment";
-                        Cd.P1 = listOfPoints[2];
-                        Cd.P2 = listOfPoints[3];
-                        Cd.Length = Math.Sqrt(Math.Pow(listOfPoints[2].X - listOfPoints[3].X, 2) +
-                                              Math.Pow(listOfPoints[2].Y - listOfPoints[3].Y, 2));
-                        dynamic r3 = new ExpandoObject();
-                        Cd.Slope = (Math.Abs((double)listOfPoints[3].X - listOfPoints[2].X) <= 0.0001)
-                            ? ((Func<dynamic>)(() =>
-                            {
-                                r3.IsSome = false;
-                                return r3;
-                            }))()
-                            : ((Func<double, dynamic>)((v2) =>
-                            {
-                                r3.IsSome = true;
-                                r3.Value = v2;
-                                return r3;
-                            }))(((double)listOfPoints[3].Y - listOfPoints[2].Y) / ((double)listOfPoints[3].X - listOfPoints[2].X));
-                        D.Type = "Line Segment";
-                        D.P1 = listOfPoints[3];
-                        D.P2 = listOfPoints[0];
-                        D.Length = Math.Sqrt(
-                            Math.Pow(listOfPoints[3].X - listOfPoints[0].X, 2) + Math.Pow(listOfPoints[3].Y - listOfPoints[0].Y, 2));
-                        dynamic r5 = new ExpandoObject();
-                        D.Slope = (Math.Abs((double)listOfPoints[0].X - listOfPoints[3].X) <= 0.0001)
-                            ? ((Func<dynamic>)(() =>
-                            {
-                                r5.IsSome = false;
-                                return r5;
-                            }))()
-                            : ((Func<double, dynamic>)((v3) =>
-                            {
-                                r5.IsSome = true;
-                                r5.Value = v3;
-                                return r5;
-                            }))(((double)listOfPoints[0].Y - listOfPoints[3].Y) / ((double)listOfPoints[0].X - listOfPoints[3].X));
-                        ((dynamic)firstPoint).SideA = Ad;
-                        ((dynamic)firstPoint).SideB = Bd;
-                        ((dynamic)firstPoint).SideC = Cd;
-                        ((dynamic)firstPoint).SideD = D;
-                        ((dynamic)firstPoint).Area = Ad.Length * Bd.Length;
-                        ((dynamic)firstPoint).Perimeter = Ad.Length + Bd.Length + Cd.Length + D.Length;
+                        Banana3(listOfPoints, firstPoint);
                     }
                     else
                     {
@@ -485,6 +399,97 @@ namespace Shape.Lib
             }
 
             return firstPoint;
+        }
+
+        private static void Banana3(IReadOnlyList<dynamic> listOfPoints, dynamic firstPoint)
+        {
+            ((dynamic) firstPoint).Type = "Rectangle";
+            ((dynamic) firstPoint).P1 = listOfPoints[0];
+            ((dynamic) firstPoint).P2 = listOfPoints[1];
+            ((dynamic) firstPoint).P3 = listOfPoints[2];
+            ((dynamic) firstPoint).P4 = listOfPoints[3];
+            dynamic Ad = new ExpandoObject();
+            dynamic Bd = new ExpandoObject();
+            dynamic Cd = new ExpandoObject();
+            dynamic D = new ExpandoObject();
+            Ad.Type = "Line Segment";
+            Ad.P1 = listOfPoints[0];
+            Ad.P2 = listOfPoints[1];
+            Ad.Length = Math.Sqrt(Math.Pow(listOfPoints[0].X - listOfPoints[1].X, 2) +
+                                  Math.Pow(listOfPoints[0].Y - listOfPoints[1].Y, 2));
+            dynamic r = new ExpandoObject();
+            Ad.Slope = (Math.Abs((double) listOfPoints[1].X - listOfPoints[0].X) <= 0.0001)
+                ? ((Func<dynamic>) (() =>
+                {
+                    r.IsSome = false;
+                    return r;
+                }))()
+                : ((Func<double, dynamic>) ((v) =>
+                {
+                    r.IsSome = true;
+                    r.Value = v;
+                    return r;
+                }))(((double) listOfPoints[1].Y - listOfPoints[0].Y) / ((double) listOfPoints[1].X - listOfPoints[0].X));
+            Bd.Type = "Line Segment";
+            Bd.P1 = listOfPoints[1];
+            Bd.P2 = listOfPoints[2];
+            Bd.Length = Math.Sqrt(Math.Pow(listOfPoints[1].X - listOfPoints[2].X, 2) +
+                                  Math.Pow(listOfPoints[1].Y - listOfPoints[2].Y, 2));
+            dynamic r1 = new ExpandoObject();
+            Bd.Slope = (Math.Abs((double) listOfPoints[2].X - listOfPoints[1].X) <= 0.0001)
+                ? ((Func<dynamic>) (() =>
+                {
+                    r1.IsSome = false;
+                    return r1;
+                }))()
+                : ((Func<double, dynamic>) (((v1) =>
+                {
+                    r1.IsSome = true;
+                    r1.Value = v1;
+                    return r1;
+                })))(((double) listOfPoints[2].Y - listOfPoints[1].Y) / ((double) listOfPoints[2].X - listOfPoints[1].X));
+            Cd.Type = "Line Segment";
+            Cd.P1 = listOfPoints[2];
+            Cd.P2 = listOfPoints[3];
+            Cd.Length = Math.Sqrt(Math.Pow(listOfPoints[2].X - listOfPoints[3].X, 2) +
+                                  Math.Pow(listOfPoints[2].Y - listOfPoints[3].Y, 2));
+            dynamic r3 = new ExpandoObject();
+            Cd.Slope = (Math.Abs((double) listOfPoints[3].X - listOfPoints[2].X) <= 0.0001)
+                ? ((Func<dynamic>) (() =>
+                {
+                    r3.IsSome = false;
+                    return r3;
+                }))()
+                : ((Func<double, dynamic>) ((v2) =>
+                {
+                    r3.IsSome = true;
+                    r3.Value = v2;
+                    return r3;
+                }))(((double) listOfPoints[3].Y - listOfPoints[2].Y) / ((double) listOfPoints[3].X - listOfPoints[2].X));
+            D.Type = "Line Segment";
+            D.P1 = listOfPoints[3];
+            D.P2 = listOfPoints[0];
+            D.Length = Math.Sqrt(
+                Math.Pow(listOfPoints[3].X - listOfPoints[0].X, 2) + Math.Pow(listOfPoints[3].Y - listOfPoints[0].Y, 2));
+            dynamic r5 = new ExpandoObject();
+            D.Slope = (Math.Abs((double) listOfPoints[0].X - listOfPoints[3].X) <= 0.0001)
+                ? ((Func<dynamic>) (() =>
+                {
+                    r5.IsSome = false;
+                    return r5;
+                }))()
+                : ((Func<double, dynamic>) ((v3) =>
+                {
+                    r5.IsSome = true;
+                    r5.Value = v3;
+                    return r5;
+                }))(((double) listOfPoints[0].Y - listOfPoints[3].Y) / ((double) listOfPoints[0].X - listOfPoints[3].X));
+            ((dynamic) firstPoint).SideA = Ad;
+            ((dynamic) firstPoint).SideB = Bd;
+            ((dynamic) firstPoint).SideC = Cd;
+            ((dynamic) firstPoint).SideD = D;
+            ((dynamic) firstPoint).Area = Ad.Length * Bd.Length;
+            ((dynamic) firstPoint).Perimeter = Ad.Length + Bd.Length + Cd.Length + D.Length;
         }
 
         private static void Banana2(IReadOnlyList<dynamic> listOfPoints, dynamic firstPoint)

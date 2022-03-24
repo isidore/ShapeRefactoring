@@ -256,7 +256,7 @@ namespace Shape.Lib
 
                 ((dynamic) firstPoint).Points = listOfPoints;
 
-                bool OJ7()
+                bool IsClosed()
                 {
                    
 
@@ -271,11 +271,10 @@ namespace Shape.Lib
                     return true;
                 }
 
-                
 
-              
-                ((dynamic)firstPoint).IsClosed = ((Func<bool>)(OJ7))();
-                ((dynamic) firstPoint).IsOpen = !((Func<bool>) (OJ7))();
+                var closed = ((Func<bool>)(IsClosed))();
+                ((dynamic)firstPoint).IsClosed = closed;
+                ((dynamic) firstPoint).IsOpen = !closed;
 
                 var segments = new List<double>();
 

@@ -273,22 +273,9 @@ namespace Shape.Lib
 
                 
 
-                bool OJ8()
-                {
-                    
-
-                    if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0]).Count != ((IDictionary<string, dynamic>) listOfPoints[^1]).Count) return false;
-                    foreach (var pair1 in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0])
-                    {
-                        var o1 = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[^1]).TryGetValue(pair1.Key, out o1)) return false;
-                        if (!Equals(o1, pair1.Value)) return false;
-                    }
-
-                    return true;
-                }
+              
                 ((dynamic)firstPoint).IsClosed = ((Func<bool>)(OJ7))();
-                ((dynamic) firstPoint).IsOpen = !((Func<bool>) (OJ8))();
+                ((dynamic) firstPoint).IsOpen = !((Func<bool>) (OJ7))();
 
                 var segments = new List<double>();
 

@@ -245,7 +245,8 @@ namespace Shape.Lib
             else
             {
                 gs = gs(2);
-                if (listOfPoints.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && ((Func<bool>)(() =>
+
+                bool OJ8()
                 {
                     if (listOfPoints[^1] == MathHelper.NULL && listOfPoints[0] == MathHelper.NULL)
                     {
@@ -257,19 +258,18 @@ namespace Shape.Lib
                         return false;
                     }
 
-                    if ((IDictionary<string, dynamic>)listOfPoints[^1] != MathHelper.NULL &&
-                        ((ICollection<KeyValuePair<string, dynamic>>)listOfPoints[0]).Count !=
-                        ((IDictionary<string, dynamic>)listOfPoints[^1]).Count) return false;
-                    foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>)listOfPoints[0])
+                    if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0]).Count != ((IDictionary<string, dynamic>) listOfPoints[^1]).Count) return false;
+                    foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0])
                     {
                         var o1 = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>)listOfPoints[^1] != MathHelper.NULL &&
-                            !((IDictionary<string, dynamic>)listOfPoints[^1]).TryGetValue(k, out o1)) return false;
+                        if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[^1]).TryGetValue(k, out o1)) return false;
                         if (!Equals(o1, pv)) return false;
                     }
 
                     return true;
-                }))()))
+                }
+
+                if (listOfPoints.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && ((Func<bool>)(OJ8))()))
                 {
                     Banana2(listOfPoints, firstPoint);
                 }

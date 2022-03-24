@@ -47,35 +47,7 @@ namespace Shape.Lib
             var gs = ReturnsAFunction(1);
             dynamic firstPoint = toExpando(firstPoint1);
           
-            var dC = listOfPoints?.Distinct(new Checker<dynamic>((pa, pb) =>
-            {
-                if (pb == MathHelper.NULL && pa == MathHelper.NULL)
-                {
-                    return true;
-                }
-
-                if (MathHelper.NULL == pa || pb == MathHelper.NULL)
-                {
-                    return false;
-                }
-
-                if ((IDictionary<string, dynamic>)pb != MathHelper.NULL &&
-                    ((ICollection<KeyValuePair<string, dynamic>>)pa).Count != ((IDictionary<string, dynamic>)pb).Count)
-                    return false;
-
-                foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>)pa)
-                {
-                    dynamic o = MathHelper.NULL;
-                    if ((IDictionary<string, dynamic>)pb != MathHelper.NULL &&
-                        !((IDictionary<string, dynamic>)pb).TryGetValue(k, out o))
-                        return false;
-
-                    if (!Equals(o, pv))
-                        return false;
-                }
-
-                return true;
-            }, d => $"{d.X} {d.Y} {d.Type}".GetHashCode())).Count();
+            var dC = listOfPoints?.Distinct(new Checker<dynamic>(OrangeJuice, d => $"{d.X} {d.Y} {d.Type}".GetHashCode())).Count();
 
             var deg = new List<dynamic>();
 
@@ -793,6 +765,31 @@ namespace Shape.Lib
             }
 
             return firstPoint;
+        }
+
+        private static bool OrangeJuice(dynamic pa, dynamic pb)
+        {
+            if (pb == MathHelper.NULL && pa == MathHelper.NULL)
+            {
+                return true;
+            }
+
+            if (MathHelper.NULL == pa || pb == MathHelper.NULL)
+            {
+                return false;
+            }
+
+            if ((IDictionary<string, dynamic>) pb != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) pa).Count != ((IDictionary<string, dynamic>) pb).Count) return false;
+
+            foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>) pa)
+            {
+                dynamic o = MathHelper.NULL;
+                if ((IDictionary<string, dynamic>) pb != MathHelper.NULL && !((IDictionary<string, dynamic>) pb).TryGetValue(k, out o)) return false;
+
+                if (!Equals(o, pv)) return false;
+            }
+
+            return true;
         }
 
         public static Shape ExpectoPatronum(double x, double y)

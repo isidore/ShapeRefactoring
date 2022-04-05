@@ -74,8 +74,9 @@ namespace Shape.Lib
 
                 bool OJ7()
                 {
-                    var offset = 1;   
-                    foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset])
+                    var offset = 1;
+                    var keyValuePairs = (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset];
+                    foreach (var keyValuePair in keyValuePairs)
                     {
                         var noNo = MathHelper.NULL;
                         if (!Equals(noNo, keyValuePair.Value)) return false;

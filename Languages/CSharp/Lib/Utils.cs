@@ -66,7 +66,7 @@ namespace Shape.Lib
 
                 if ( !IsEverythingNull(listOfPoints[^2]) && !IsEverythingNull(listOfPoints[^1]))
                 {
-                    Banana(listOfPoints, deg);
+                    ApplesauceFor3Points(listOfPoints, deg);
                 }
             }
 
@@ -646,7 +646,7 @@ namespace Shape.Lib
             ((dynamic) firstPoint).Perimeter = A.Length + B.Length + C.Length;
         }
 
-        private static void Banana(IReadOnlyList<dynamic> listOfPoints, List<dynamic> deg)
+        private static void ApplesauceFor3Points(IReadOnlyList<dynamic> listOfPoints, List<dynamic> deg)
         {
             ((ICollection<dynamic>) deg).Add(Math.Acos(
                 (Math.Pow(

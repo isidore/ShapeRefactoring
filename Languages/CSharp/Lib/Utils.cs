@@ -53,69 +53,7 @@ namespace Shape.Lib
 
             for (var i = 2; i < listOfPoints.Count; i++)
             {
-                var i1 = i;
-
-                bool OrangeJuice2()
-                {
-                   
-
-                    if ((IDictionary<string, dynamic>) listOfPoints[i1 - 1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 2]).Count != ((IDictionary<string, dynamic>) listOfPoints[i1 - 1]).Count) return false;
-                    foreach (var (key, value) in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 2])
-                    {
-                        var obj = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>) listOfPoints[i1 - 1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[i1 - 1]).TryGetValue(key, out obj)) return false;
-                        if (!Equals(obj, value)) return false;
-                    }
-
-                    return true;
-                }
-
-                bool OJ3()
-                {
-                   
-
-                    if ((IDictionary<string, dynamic>) listOfPoints[i1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 2]).Count != ((IDictionary<string, dynamic>) listOfPoints[i1]).Count) return false;
-                    foreach (var (key1, value1) in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 2])
-                    {
-                        var obj1 = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>) listOfPoints[i1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[i1]).TryGetValue(key1, out obj1)) return false;
-                        if (!Equals(obj1, value1)) return false;
-                    }
-
-                    return true;
-                }
-
-                bool OJ4()
-                {
-                   
-                    if ((IDictionary<string, dynamic>) listOfPoints[i1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 1]).Count != ((IDictionary<string, dynamic>) listOfPoints[i1]).Count) return false;
-                    foreach (var (key2, value2) in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 1])
-                    {
-                        var obj2 = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>) listOfPoints[i1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[i1]).TryGetValue(key2, out obj2)) return false;
-                        if (!Equals(obj2, value2)) return false;
-                    }
-
-                    return true;
-                }
-
-                if (!((Func<bool>)(OrangeJuice2))() && !((Func<bool>)(OJ3))() && !((Func<bool>)(OJ4))())
-                {
-                    ((ICollection<dynamic>)deg).Add(Math.Acos(
-                        (Math.Pow(
-                             Math.Sqrt(Math.Pow(listOfPoints[i - 2].X - listOfPoints[i - 1].X, 2) +
-                                       Math.Pow(listOfPoints[i - 2].Y - listOfPoints[i - 1].Y, 2)), 2) +
-                         Math.Pow(
-                             Math.Sqrt(Math.Pow(listOfPoints[i].X - listOfPoints[i - 1].X, 2) +
-                                       Math.Pow(listOfPoints[i].Y - listOfPoints[i - 1].Y, 2)), 2) -
-                         Math.Pow(
-                             Math.Sqrt(Math.Pow(listOfPoints[i - 2].X - listOfPoints[i].X, 2) +
-                                       Math.Pow(listOfPoints[i - 2].Y - listOfPoints[i].Y, 2)), 2)) / (2 *
-                            Math.Sqrt(Math.Pow(listOfPoints[i - 2].X - listOfPoints[i - 1].X, 2) +
-                                      Math.Pow(listOfPoints[i - 2].Y - listOfPoints[i - 1].Y, 2)) *
-                            Math.Sqrt(Math.Pow(listOfPoints[i].X - listOfPoints[i - 1].X, 2) +
-                                      Math.Pow(listOfPoints[i].Y - listOfPoints[i - 1].Y, 2)))) * (180 / Math.PI));
-                }
+                Fruitloops(listOfPoints, i, deg);
             }
 
             if (3 <= listOfPoints.Count)
@@ -245,6 +183,77 @@ namespace Shape.Lib
             }
 
             return firstPoint;
+        }
+
+        private static void Fruitloops(IReadOnlyList<dynamic> listOfPoints, int i, List<dynamic> deg)
+        {
+            var i1 = i;
+
+            bool OrangeJuice2()
+            {
+                if ((IDictionary<string, dynamic>) listOfPoints[i1 - 1] != MathHelper.NULL &&
+                    ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 2]).Count !=
+                    ((IDictionary<string, dynamic>) listOfPoints[i1 - 1]).Count) return false;
+                foreach (var (key, value) in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 2])
+                {
+                    var obj = MathHelper.NULL;
+                    if ((IDictionary<string, dynamic>) listOfPoints[i1 - 1] != MathHelper.NULL &&
+                        !((IDictionary<string, dynamic>) listOfPoints[i1 - 1]).TryGetValue(key, out obj)) return false;
+                    if (!Equals(obj, value)) return false;
+                }
+
+                return true;
+            }
+
+            bool OJ3()
+            {
+                if ((IDictionary<string, dynamic>) listOfPoints[i1] != MathHelper.NULL &&
+                    ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 2]).Count !=
+                    ((IDictionary<string, dynamic>) listOfPoints[i1]).Count) return false;
+                foreach (var (key1, value1) in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 2])
+                {
+                    var obj1 = MathHelper.NULL;
+                    if ((IDictionary<string, dynamic>) listOfPoints[i1] != MathHelper.NULL &&
+                        !((IDictionary<string, dynamic>) listOfPoints[i1]).TryGetValue(key1, out obj1)) return false;
+                    if (!Equals(obj1, value1)) return false;
+                }
+
+                return true;
+            }
+
+            bool OJ4()
+            {
+                if ((IDictionary<string, dynamic>) listOfPoints[i1] != MathHelper.NULL &&
+                    ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 1]).Count !=
+                    ((IDictionary<string, dynamic>) listOfPoints[i1]).Count) return false;
+                foreach (var (key2, value2) in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[i1 - 1])
+                {
+                    var obj2 = MathHelper.NULL;
+                    if ((IDictionary<string, dynamic>) listOfPoints[i1] != MathHelper.NULL &&
+                        !((IDictionary<string, dynamic>) listOfPoints[i1]).TryGetValue(key2, out obj2)) return false;
+                    if (!Equals(obj2, value2)) return false;
+                }
+
+                return true;
+            }
+
+            if (!((Func<bool>) (OrangeJuice2))() && !((Func<bool>) (OJ3))() && !((Func<bool>) (OJ4))())
+            {
+                ((ICollection<dynamic>) deg).Add(Math.Acos(
+                    (Math.Pow(
+                         Math.Sqrt(Math.Pow(listOfPoints[i - 2].X - listOfPoints[i - 1].X, 2) +
+                                   Math.Pow(listOfPoints[i - 2].Y - listOfPoints[i - 1].Y, 2)), 2) +
+                     Math.Pow(
+                         Math.Sqrt(Math.Pow(listOfPoints[i].X - listOfPoints[i - 1].X, 2) +
+                                   Math.Pow(listOfPoints[i].Y - listOfPoints[i - 1].Y, 2)), 2) -
+                     Math.Pow(
+                         Math.Sqrt(Math.Pow(listOfPoints[i - 2].X - listOfPoints[i].X, 2) +
+                                   Math.Pow(listOfPoints[i - 2].Y - listOfPoints[i].Y, 2)), 2)) / (2 *
+                        Math.Sqrt(Math.Pow(listOfPoints[i - 2].X - listOfPoints[i - 1].X, 2) +
+                                  Math.Pow(listOfPoints[i - 2].Y - listOfPoints[i - 1].Y, 2)) *
+                        Math.Sqrt(Math.Pow(listOfPoints[i].X - listOfPoints[i - 1].X, 2) +
+                                  Math.Pow(listOfPoints[i].Y - listOfPoints[i - 1].Y, 2)))) * (180 / Math.PI));
+            }
         }
 
         private static void Banana4(IReadOnlyList<dynamic> listOfPoints, Func<int?, dynamic> gs, dynamic firstPoint)

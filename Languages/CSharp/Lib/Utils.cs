@@ -61,12 +61,7 @@ namespace Shape.Lib
 
                 bool IsEverythingNull(ICollection<KeyValuePair<string, dynamic>> keyValuePairs)
                 {
-                    foreach (var keyValuePair in keyValuePairs)
-                    {
-                        if (!Equals(MathHelper.NULL, keyValuePair.Value)) return false;
-                    }
-
-                    return true;
+                    return keyValuePairs.All(k => k.Value == null);
                 }
 
                 if ( !IsEverythingNull(listOfPoints[^2]) && !IsEverythingNull(listOfPoints[^1]))

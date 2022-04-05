@@ -65,7 +65,6 @@ namespace Shape.Lib
                     foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset])
                     {
                         var noNo = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[^1]).TryGetValue(keyValuePair.Key, out noNo)) return false;
                         if (!Equals(noNo, keyValuePair.Value)) return false;
                     }
 
@@ -79,7 +78,6 @@ namespace Shape.Lib
                     foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset])
                     {
                         var noNo = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[1]).TryGetValue(keyValuePair.Key, out noNo)) return false;
                         if (!Equals(noNo, keyValuePair.Value)) return false;
                     }
 
@@ -92,7 +90,6 @@ namespace Shape.Lib
                     foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset])
                     {
                         var noNo = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[1]).TryGetValue(keyValuePair.Key, out noNo)) return false;
                         if (!Equals(noNo, keyValuePair.Value)) return false;
                     }
 

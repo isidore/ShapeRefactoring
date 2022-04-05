@@ -60,17 +60,8 @@ namespace Shape.Lib
             {
                 Fruitloops(listOfPoints, i, deg);
             }
-            
 
-
-            if (3 <= listOfPoints.Count)
-            {
-
-                if ( !IsEverythingNull(listOfPoints[^2]) && !IsEverythingNull(listOfPoints[^1]))
-                {
-                    ApplesauceFor3Points(listOfPoints, deg);
-                }
-            }
+            ApplesauceFor3OrMorePoints(listOfPoints, deg);
 
             gs = gs(1);
             if (listOfPoints.Count == gs(MathHelper.NULL) && dC == gs(MathHelper.NULL))
@@ -648,8 +639,15 @@ namespace Shape.Lib
             ((dynamic) firstPoint).Perimeter = A.Length + B.Length + C.Length;
         }
 
-        private static void ApplesauceFor3Points(IReadOnlyList<dynamic> listOfPoints, List<dynamic> deg)
+        private static void ApplesauceFor3OrMorePoints(IReadOnlyList<dynamic> listOfPoints, List<dynamic> deg)
         {
+            if (listOfPoints.Count < 3 || (IsEverythingNull(listOfPoints[^2]) || IsEverythingNull(listOfPoints[^1])))
+            {
+                return;
+            }
+           
+
+
             ((ICollection<dynamic>) deg).Add(Math.Acos(
                 (Math.Pow(
                      Math.Sqrt(Math.Pow(listOfPoints[^2].X - listOfPoints[^1].X, 2) +

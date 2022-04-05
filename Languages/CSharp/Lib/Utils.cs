@@ -59,18 +59,17 @@ namespace Shape.Lib
             if (3 <= listOfPoints.Count)
             {
 
-                bool OJ7(ICollection<KeyValuePair<string, dynamic>> keyValuePairs)
+                bool IsEverythingNull(ICollection<KeyValuePair<string, dynamic>> keyValuePairs)
                 {
                     foreach (var keyValuePair in keyValuePairs)
                     {
-                        var noNo = MathHelper.NULL;
-                        if (!Equals(noNo, keyValuePair.Value)) return false;
+                        if (!Equals(MathHelper.NULL, keyValuePair.Value)) return false;
                     }
 
                     return true;
                 }
 
-                if ( !OJ7(listOfPoints[^2]) && !OJ7(listOfPoints[^1]))
+                if ( !IsEverythingNull(listOfPoints[^2]) && !IsEverythingNull(listOfPoints[^1]))
                 {
                     Banana(listOfPoints, deg);
                 }

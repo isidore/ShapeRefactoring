@@ -77,11 +77,11 @@ namespace Shape.Lib
                 {
                    
                     if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^2]).Count != ((IDictionary<string, dynamic>) listOfPoints[1]).Count) return false;
-                    foreach (var keyValuePair1 in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^2])
+                    foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^2])
                     {
-                        var noNo1 = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[1]).TryGetValue(keyValuePair1.Key, out noNo1)) return false;
-                        if (!Equals(noNo1, keyValuePair1.Value)) return false;
+                        var noNo = MathHelper.NULL;
+                        if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[1]).TryGetValue(keyValuePair.Key, out noNo)) return false;
+                        if (!Equals(noNo, keyValuePair.Value)) return false;
                     }
 
                     return true;
@@ -91,11 +91,11 @@ namespace Shape.Lib
                 {
                     
                     if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^1]).Count != ((IDictionary<string, dynamic>) listOfPoints[1]).Count) return false;
-                    foreach (var keyValuePair2 in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^1])
+                    foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^1])
                     {
-                        var noNo2 = MathHelper.NULL;
-                        if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[1]).TryGetValue(keyValuePair2.Key, out noNo2)) return false;
-                        if (!Equals(noNo2, keyValuePair2.Value)) return false;
+                        var noNo = MathHelper.NULL;
+                        if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[1]).TryGetValue(keyValuePair.Key, out noNo)) return false;
+                        if (!Equals(noNo, keyValuePair.Value)) return false;
                     }
 
                     return true;

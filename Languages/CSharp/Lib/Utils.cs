@@ -90,7 +90,6 @@ namespace Shape.Lib
                 bool OJ7()
                 {
                     var offset = 1;   
-                    if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset]).Count != ((IDictionary<string, dynamic>) listOfPoints[1]).Count) return false;
                     foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset])
                     {
                         var noNo = MathHelper.NULL;

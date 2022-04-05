@@ -55,7 +55,7 @@ namespace Shape.Lib
             {
                 Fruitloops(listOfPoints, i, deg);
             }
-
+            
             if (3 <= listOfPoints.Count)
             {
                 bool OJ5()
@@ -76,7 +76,7 @@ namespace Shape.Lib
                 bool OJ6()
                 {
                     var offset = 2;  
-                    if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset]).Count != ((IDictionary<string, dynamic>) listOfPoints[1]).Count) return false;
+                    
                     foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset])
                     {
                         var noNo = MathHelper.NULL;

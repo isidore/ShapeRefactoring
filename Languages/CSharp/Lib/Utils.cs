@@ -60,10 +60,10 @@ namespace Shape.Lib
             {
                 bool OJ5()
                 {
-                   
+                    var offset = 2;
 
-                    if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^2]).Count != ((IDictionary<string, dynamic>) listOfPoints[^1]).Count) return false;
-                    foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^2])
+                    if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset]).Count != ((IDictionary<string, dynamic>) listOfPoints[^1]).Count) return false;
+                    foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset])
                     {
                         var noNo = MathHelper.NULL;
                         if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[^1]).TryGetValue(keyValuePair.Key, out noNo)) return false;
@@ -75,9 +75,9 @@ namespace Shape.Lib
 
                 bool OJ6()
                 {
-                   
-                    if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^2]).Count != ((IDictionary<string, dynamic>) listOfPoints[1]).Count) return false;
-                    foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^2])
+                    var offset = 2;  
+                    if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset]).Count != ((IDictionary<string, dynamic>) listOfPoints[1]).Count) return false;
+                    foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset])
                     {
                         var noNo = MathHelper.NULL;
                         if ((IDictionary<string, dynamic>) listOfPoints[1] != MathHelper.NULL && !((IDictionary<string, dynamic>) listOfPoints[1]).TryGetValue(keyValuePair.Key, out noNo)) return false;

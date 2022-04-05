@@ -101,7 +101,7 @@ namespace Shape.Lib
                     return true;
                 }
 
-                if (!((Func<bool>)(OJ5))() && !((Func<bool>)(OJ6))() && !((Func<bool>)(OJ7))())
+                if (!OJ5() && !((Func<bool>)(OJ6))() && !((Func<bool>)(OJ7))())
                 {
                     Banana(listOfPoints, deg);
                 }

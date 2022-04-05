@@ -58,19 +58,7 @@ namespace Shape.Lib
             
             if (3 <= listOfPoints.Count)
             {
-                bool OJ5()
-                {
-                    var offset = 2;
-
-                    foreach (var keyValuePair in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset])
-                    {
-                        var noNo = MathHelper.NULL;
-                        if (!Equals(noNo, keyValuePair.Value)) return false;
-                    }
-
-                    return true;
-                }
-
+                
                 bool OJ6()
                 {
                     var offset = 2;  
@@ -96,7 +84,7 @@ namespace Shape.Lib
                     return true;
                 }
 
-                if (!OJ5() && !OJ6() && !OJ7())
+                if ( !OJ6() && !OJ7())
                 {
                     Banana(listOfPoints, deg);
                 }

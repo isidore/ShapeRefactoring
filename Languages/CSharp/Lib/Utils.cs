@@ -42,6 +42,11 @@ namespace Shape.Lib
 
         }
 
+        private static bool IsEverythingNull(ICollection<KeyValuePair<string, dynamic>> keyValuePairs)
+        {
+            return keyValuePairs.All(k => k.Value == null);
+        }
+
         private static dynamic Applesauce(IReadOnlyList<dynamic> listOfPoints, Shape firstPoint1)
         {
             var gs = ReturnsAFunction(1);
@@ -56,13 +61,10 @@ namespace Shape.Lib
                 Fruitloops(listOfPoints, i, deg);
             }
             
+
+
             if (3 <= listOfPoints.Count)
             {
-
-                bool IsEverythingNull(ICollection<KeyValuePair<string, dynamic>> keyValuePairs)
-                {
-                    return keyValuePairs.All(k => k.Value == null);
-                }
 
                 if ( !IsEverythingNull(listOfPoints[^2]) && !IsEverythingNull(listOfPoints[^1]))
                 {

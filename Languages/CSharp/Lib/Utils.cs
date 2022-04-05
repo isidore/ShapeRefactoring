@@ -72,10 +72,8 @@ namespace Shape.Lib
                     return true;
                 }
 
-                bool OJ7()
+                bool OJ7(ICollection<KeyValuePair<string, dynamic>> keyValuePairs)
                 {
-                    var offset = 1;
-                    var keyValuePairs = (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[^offset];
                     foreach (var keyValuePair in keyValuePairs)
                     {
                         var noNo = MathHelper.NULL;
@@ -85,7 +83,7 @@ namespace Shape.Lib
                     return true;
                 }
 
-                if ( !OJ6() && !OJ7())
+                if ( !OJ6() && !OJ7(listOfPoints[^1]))
                 {
                     Banana(listOfPoints, deg);
                 }

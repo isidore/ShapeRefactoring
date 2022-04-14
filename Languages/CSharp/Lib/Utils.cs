@@ -199,7 +199,7 @@ namespace Shape.Lib
 
         private static void Banana4(IReadOnlyList<dynamic> listOfPoints, Func<int?, dynamic> gs, dynamic firstPoint)
         {
-            if (0 < listOfPoints.Count && !(0 == -1))
+            if (0 < listOfPoints.Count)
             {
                 ((dynamic) firstPoint).Type = "Other";
 

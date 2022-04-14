@@ -118,7 +118,7 @@ namespace Shape.Lib
                     }
                     else
                     {
-                        Banana4(listOfPoints, gs, firstPoint);
+                        Banana4(listOfPoints, firstPoint);
                     }
                 }
             }
@@ -197,7 +197,7 @@ namespace Shape.Lib
             }
         }
 
-        private static void Banana4(IReadOnlyList<dynamic> listOfPoints, Func<int?, dynamic> gs, dynamic firstPoint)
+        private static void Banana4(IReadOnlyList<dynamic> listOfPoints, dynamic firstPoint)
         {
             if (0 < listOfPoints.Count)
             {

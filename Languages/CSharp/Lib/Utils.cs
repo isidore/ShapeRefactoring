@@ -49,7 +49,6 @@ namespace Shape.Lib
 
         private static dynamic Applesauce(IReadOnlyList<dynamic> listOfPoints, Shape firstPoint1)
         {
-            var gs = ReturnsAFunction(1);
             dynamic firstPoint = toExpando(firstPoint1);
           
             var dC = listOfPoints.Distinct(new Checker<dynamic>(OrangeJuice, HashCode)).Count();
@@ -63,7 +62,6 @@ namespace Shape.Lib
 
             ApplesauceFor3OrMorePoints(listOfPoints, deg);
 
-            gs = gs(1);
             if (listOfPoints.Count == 2 && dC == 2)
             {
                 ((dynamic)firstPoint).Type = "Line Segment";

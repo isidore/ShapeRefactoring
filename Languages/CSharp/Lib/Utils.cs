@@ -91,7 +91,6 @@ namespace Shape.Lib
 
                 bool OJ8()
                 {
-                   
 
                     if ((IDictionary<string, dynamic>) listOfPoints[^1] != MathHelper.NULL && ((ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0]).Count != ((IDictionary<string, dynamic>) listOfPoints[^1]).Count) return false;
                     foreach (var (k, pv) in (ICollection<KeyValuePair<string, dynamic>>) listOfPoints[0])
@@ -106,7 +105,7 @@ namespace Shape.Lib
 
 
 
-                if (listOfPoints.Count == 4 && (dC == 3 && ((Func<bool>)(OJ8))()))
+                if (listOfPoints.Count == 4 && (dC == 3 && OJ8()))
                 {
                     Banana2(listOfPoints, firstPoint);
                 }

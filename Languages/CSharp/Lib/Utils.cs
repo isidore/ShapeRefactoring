@@ -64,8 +64,7 @@ namespace Shape.Lib
             ApplesauceFor3OrMorePoints(listOfPoints, deg);
 
             gs = gs(1);
-            var o = 2;
-            if (listOfPoints.Count == o && dC == o)
+            if (listOfPoints.Count == 2 && dC == 2)
             {
                 ((dynamic)firstPoint).Type = "Line Segment";
                 ((dynamic)firstPoint).P1 = listOfPoints[0];

@@ -104,8 +104,8 @@ namespace Shape.Lib
                 }
 
 
-
-                if (listOfPoints.Count == 4 && (dC == 3 && OJ8()))
+                var isBanana2 = listOfPoints.Count == 4 && (dC == 3 && OJ8());
+                if (isBanana2)
                 {
                     Banana2(listOfPoints, firstPoint);
                 }

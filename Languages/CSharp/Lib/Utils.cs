@@ -111,7 +111,6 @@ namespace Shape.Lib
                 }
                 else
                 {
-                    gs = gs(1);
 
                     if (listOfPoints.Count == 5 && (dC == (5 - 1) && OJ8() && deg.All(a => (Math.Abs(a - (45 + 45)) <= 0.001))))
                     {
@@ -119,6 +118,7 @@ namespace Shape.Lib
                     }
                     else
                     {
+                        gs = gs(1);
                         Banana4(listOfPoints, gs, firstPoint);
                     }
                 }

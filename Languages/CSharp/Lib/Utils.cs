@@ -118,7 +118,6 @@ namespace Shape.Lib
                     }
                     else
                     {
-                        gs = gs(1);
                         Banana4(listOfPoints, gs, firstPoint);
                     }
                 }

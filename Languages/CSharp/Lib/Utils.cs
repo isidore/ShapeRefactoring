@@ -119,7 +119,7 @@ namespace Shape.Lib
                     return true;
                 }
 
-                var o = gs(MathHelper.NULL);
+                var o = 4;
                 if (listOfPoints.Count == o && (dC == (o - 1) && ((Func<bool>)(OJ8))()))
                 {
                     Banana2(listOfPoints, firstPoint);

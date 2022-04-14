@@ -7,21 +7,6 @@ namespace Shape.Lib
 {
     internal class Utils
     {
-        public static Func<int?, dynamic> ReturnsAFunction(int startingNumber)
-        {
-            dynamic addToStartingNumberIfNotNull(int? v)
-            {
-                if (v == null)
-                {
-                    return startingNumber;
-                }
-
-                return ReturnsAFunction(startingNumber + v.Value);
-            }
-
-            return addToStartingNumberIfNotNull;
-        }
-
         public static dynamic SortingHat(IReadOnlyList<dynamic> roster)
         {
             if (roster == MathHelper.NULL)

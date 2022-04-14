@@ -113,7 +113,7 @@ namespace Shape.Lib
                 {
                     gs = gs(1);
 
-                    if (listOfPoints.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && ((Func<bool>)(OJ8))() && deg.All(a => (Math.Abs(a - (45 + 45)) <= 0.001))))
+                    if (listOfPoints.Count == gs(MathHelper.NULL) && (dC == (gs(MathHelper.NULL) - 1) && OJ8() && deg.All(a => (Math.Abs(a - (45 + 45)) <= 0.001))))
                     {
                         Banana3(listOfPoints, firstPoint);
                     }

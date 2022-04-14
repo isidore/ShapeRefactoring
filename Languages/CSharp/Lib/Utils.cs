@@ -87,7 +87,7 @@ namespace Shape.Lib
             }
             else
             {
-                gs = gs(2);
+           
 
                 bool OJ8()
                 {
